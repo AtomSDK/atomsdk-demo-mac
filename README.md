@@ -42,13 +42,13 @@ OR
 
 It can be initialized using an instance of AtomConfiguration. It should have a vpnInterfaceName which will be used to create the Network Interface for VPN connection. 
 
-
+```
 AtomConfiguration *atomConfiguration = [[AtomConfiguration alloc] init];
 atomConfiguration.secretKey = @"<#SECRETKEY_GOES_HERE#>>";
 atomConfiguration.vpnInterfaceName = @"Atom";
 atomConfiguration.baseUrl = [NSURL URLWithString:@"<#YOUR_BASE_URL#>"];
 [AtomManager sharedInstanceWithAtomConfiguration:atomConfiguration];
-
+```
 
 PS: ATOM SDK is a singleton, and must be initialized before accessing its methods.
 
