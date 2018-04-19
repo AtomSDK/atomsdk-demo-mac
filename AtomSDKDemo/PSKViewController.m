@@ -1,6 +1,6 @@
 //
 //  PSKViewController.m
-//  AtomSDKSample
+//  AtomSDKDemo
 //
 //        
 //  Copyright © 2018  Atom. All rights reserved.
