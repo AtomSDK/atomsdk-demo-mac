@@ -1,0 +1,378 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A721ADD207B6CEC002F7220 /* DedicatedIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721ACC207B6CEC002F7220 /* DedicatedIPViewController.m */; };
+		9A721ADE207B6CEC002F7220 /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721ACD207B6CEC002F7220 /* AtomSDK.framework */; };
+		9A721ADF207B6CEC002F7220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A721ACF207B6CEC002F7220 /* Assets.xcassets */; };
+		9A721AE0207B6CEC002F7220 /* CredentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD1207B6CEC002F7220 /* CredentialViewController.m */; };
+		9A721AE1207B6CEC002F7220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A721AD2207B6CEC002F7220 /* Main.storyboard */; };
+		9A721AE2207B6CEC002F7220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD5207B6CEC002F7220 /* main.m */; };
+		9A721AE3207B6CEC002F7220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD6207B6CEC002F7220 /* AppDelegate.m */; };
+		9A721AE4207B6CEC002F7220 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD8207B6CEC002F7220 /* InitialViewController.m */; };
+		9A721AE5207B6CEC002F7220 /* ParamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD9207B6CEC002F7220 /* ParamViewController.m */; };
+		9A721AE6207B6CEC002F7220 /* PSKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721ADA207B6CEC002F7220 /* PSKViewController.m */; };
+		9A721AEE207B7F23002F7220 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721AED207B7F23002F7220 /* NetworkExtension.framework */; };
+		9A721AF0207B7F3B002F7220 /* AtomSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721ACD207B6CEC002F7220 /* AtomSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A353B6C1F29EB620049A64F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A721AF0207B7F3B002F7220 /* AtomSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9A353B511F29EB0E0049A64F /* AtomSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtomSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A721ACB207B6CEC002F7220 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9A721ACC207B6CEC002F7220 /* DedicatedIPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DedicatedIPViewController.m; sourceTree = "<group>"; };
+		9A721ACD207B6CEC002F7220 /* AtomSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AtomSDK.framework; sourceTree = "<group>"; };
+		9A721ACE207B6CEC002F7220 /* ParamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamViewController.h; sourceTree = "<group>"; };
+		9A721ACF207B6CEC002F7220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A721AD0207B6CEC002F7220 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		9A721AD1207B6CEC002F7220 /* CredentialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CredentialViewController.m; sourceTree = "<group>"; };
+		9A721AD3207B6CEC002F7220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9A721AD4207B6CEC002F7220 /* PSKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKViewController.h; sourceTree = "<group>"; };
+		9A721AD5207B6CEC002F7220 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9A721AD6207B6CEC002F7220 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9A721AD7207B6CEC002F7220 /* DedicatedIPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DedicatedIPViewController.h; sourceTree = "<group>"; };
+		9A721AD8207B6CEC002F7220 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		9A721AD9207B6CEC002F7220 /* ParamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamViewController.m; sourceTree = "<group>"; };
+		9A721ADA207B6CEC002F7220 /* PSKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKViewController.m; sourceTree = "<group>"; };
+		9A721ADC207B6CEC002F7220 /* CredentialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredentialViewController.h; sourceTree = "<group>"; };
+		9A721AEB207B7EE0002F7220 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A721AED207B7F23002F7220 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		9A721AEF207B7F23002F7220 /* AtomSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AtomSDKDemo.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A353B4E1F29EB0E0049A64F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A721ADE207B6CEC002F7220 /* AtomSDK.framework in Frameworks */,
+				9A721AEE207B7F23002F7220 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A353B481F29EB0E0049A64F = {
+			isa = PBXGroup;
+			children = (
+				9A721ACA207B6CEC002F7220 /* AtomSDKDemo */,
+				9A353B521F29EB0E0049A64F /* Products */,
+				9A353B6D1F29EC110049A64F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9A353B521F29EB0E0049A64F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A353B511F29EB0E0049A64F /* AtomSDKDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A353B6D1F29EC110049A64F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A721AED207B7F23002F7220 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A721ACA207B6CEC002F7220 /* AtomSDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9A721AEF207B7F23002F7220 /* AtomSDKDemo.entitlements */,
+				9A721ACD207B6CEC002F7220 /* AtomSDK.framework */,
+				9A721ACB207B6CEC002F7220 /* AppDelegate.h */,
+				9A721AD6207B6CEC002F7220 /* AppDelegate.m */,
+				9A721AD0207B6CEC002F7220 /* InitialViewController.h */,
+				9A721AD8207B6CEC002F7220 /* InitialViewController.m */,
+				9A721ADC207B6CEC002F7220 /* CredentialViewController.h */,
+				9A721AD1207B6CEC002F7220 /* CredentialViewController.m */,
+				9A721AD7207B6CEC002F7220 /* DedicatedIPViewController.h */,
+				9A721ACC207B6CEC002F7220 /* DedicatedIPViewController.m */,
+				9A721ACE207B6CEC002F7220 /* ParamViewController.h */,
+				9A721AD9207B6CEC002F7220 /* ParamViewController.m */,
+				9A721AD4207B6CEC002F7220 /* PSKViewController.h */,
+				9A721ADA207B6CEC002F7220 /* PSKViewController.m */,
+				9A721AD2207B6CEC002F7220 /* Main.storyboard */,
+				9A721AD5207B6CEC002F7220 /* main.m */,
+				9A721AEB207B7EE0002F7220 /* Info.plist */,
+				9A721ACF207B6CEC002F7220 /* Assets.xcassets */,
+			);
+			path = AtomSDKDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A353B501F29EB0E0049A64F /* AtomSDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A353B651F29EB0E0049A64F /* Build configuration list for PBXNativeTarget "AtomSDKDemo" */;
+			buildPhases = (
+				9A353B4D1F29EB0E0049A64F /* Sources */,
+				9A353B4E1F29EB0E0049A64F /* Frameworks */,
+				9A353B4F1F29EB0E0049A64F /* Resources */,
+				9A353B6C1F29EB620049A64F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AtomSDKDemo;
+			productName = PureVPNSDKSample;
+			productReference = 9A353B511F29EB0E0049A64F /* AtomSDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A353B491F29EB0E0049A64F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = PureVPN;
+				TargetAttributes = {
+					9A353B501F29EB0E0049A64F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4H849Z7V2K;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.VPNLite = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 9A353B4C1F29EB0E0049A64F /* Build configuration list for PBXProject "AtomSDKDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A353B481F29EB0E0049A64F;
+			productRefGroup = 9A353B521F29EB0E0049A64F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A353B501F29EB0E0049A64F /* AtomSDKDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A353B4F1F29EB0E0049A64F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A721ADF207B6CEC002F7220 /* Assets.xcassets in Resources */,
+				9A721AE1207B6CEC002F7220 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A353B4D1F29EB0E0049A64F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A721AE4207B6CEC002F7220 /* InitialViewController.m in Sources */,
+				9A721AE3207B6CEC002F7220 /* AppDelegate.m in Sources */,
+				9A721AE0207B6CEC002F7220 /* CredentialViewController.m in Sources */,
+				9A721AE6207B6CEC002F7220 /* PSKViewController.m in Sources */,
+				9A721AE2207B6CEC002F7220 /* main.m in Sources */,
+				9A721AE5207B6CEC002F7220 /* ParamViewController.m in Sources */,
+				9A721ADD207B6CEC002F7220 /* DedicatedIPViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9A721AD2207B6CEC002F7220 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A721AD3207B6CEC002F7220 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A353B631F29EB0E0049A64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9A353B641F29EB0E0049A64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9A353B661F29EB0E0049A64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AtomSDKDemo/AtomSDKDemo.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AtomSDKDemo",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/AtomSDKDemo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.vpn.mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		9A353B671F29EB0E0049A64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AtomSDKDemo/AtomSDKDemo.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AtomSDKDemo",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/AtomSDKDemo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.vpn.mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A353B4C1F29EB0E0049A64F /* Build configuration list for PBXProject "AtomSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A353B631F29EB0E0049A64F /* Debug */,
+				9A353B641F29EB0E0049A64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A353B651F29EB0E0049A64F /* Build configuration list for PBXNativeTarget "AtomSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A353B661F29EB0E0049A64F /* Debug */,
+				9A353B671F29EB0E0049A64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A353B491F29EB0E0049A64F /* Project object */;
+}

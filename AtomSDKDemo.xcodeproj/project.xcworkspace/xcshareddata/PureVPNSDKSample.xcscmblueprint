@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2DD8C07D2BCD835D88CC49C33C24A2794DBBA7FF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2DD8C07D2BCD835D88CC49C33C24A2794DBBA7FF" : 0,
+    "53E05B573F2BD1F10D822627C46FC8B0303233CD" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5A54CD64-91B4-46BE-B51C-C0C825455717",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2DD8C07D2BCD835D88CC49C33C24A2794DBBA7FF" : "PureVPNSDKSample\/",
+    "53E05B573F2BD1F10D822627C46FC8B0303233CD" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PureVPNSDKSample",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PureVPNSDKSample.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/bitbucket.org\/salmangt\/macsdksampleproject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2DD8C07D2BCD835D88CC49C33C24A2794DBBA7FF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/bitbucket.org\/purevpn\/mac-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "53E05B573F2BD1F10D822627C46FC8B0303233CD"
+    }
+  ]
+}
