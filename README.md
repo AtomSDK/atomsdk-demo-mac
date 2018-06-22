@@ -151,7 +151,7 @@ To disconnect, simply call the disconnectVPN  method of AtomManager.
 [[AtomManager sharedInstance] disconnectVPN];
 ```
 ## Note:
-The current version of the VPN Atom SDK uses the following librarie under the hood:
+The current version of the VPN Atom SDK uses the following library under the hood:
 
 * NEVPNManager
 
