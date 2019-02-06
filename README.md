@@ -9,12 +9,12 @@ This is a demo application for MAC Applications with basic usage of ATOM VPN SDK
 
 ## Compatibility
 * Compatible with Xcode 9 and OS X 10.11 and later
-* Compatible with ATOM SDK Version 1.0.4 and onwards
+* Compatible with ATOM SDK Version 2.0 and onwards
 
 ## Supported Protocols
 * IPSec
 ## SDK Installation
-Although ATOM SDK Framework is already provided with the demo application but you can install the latest version through [this link](https://secure.com/atom/downloads/sdk/Mac/1.0.4/AtomSDK-Mac.zip)
+Although ATOM SDK Framework is already provided with the demo application but you can install the latest version through [this link](https://secure.com/atom/downloads/sdk/Mac/2.0/AtomSDK.zip)
 
 # Getting Started with the Code
 To add the SDK in Xcode:
@@ -55,10 +55,10 @@ PS: ATOM SDK is a singleton, and must be initialized before accessing its method
 
 ## Delegates to Register
 ATOM SDK offers four delegates to register for the ease of the developer.
-* atomManagerDidConnect
-* atomManagerDidDisconnect
-* atomManagerDialErrorReceived
-* atomManagerOnRedialing
+* atomManagerDidConnect:
+* atomManagerDidDisconnect:
+* atomManagerDialErrorReceived:
+* atomManagerOnRedialing:
 
 ### stateDidChangedHandler to monitor a VPN connection status
 ATOM SDK offers stateDidChangedHandler for the ease of the developer.
