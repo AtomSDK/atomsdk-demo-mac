@@ -30,10 +30,8 @@
     [self.txtUserName setDelegate:self];
     [self.txtPassword setDelegate:self];
     [self.txtUUID setDelegate:self];
+}
 
-}
-- (void)viewWillAppear{
-}
 - (IBAction)autoGenerateUserCredential:(id)sender {
     NSButton* btnUseOptimize = (NSButton*)sender;
     

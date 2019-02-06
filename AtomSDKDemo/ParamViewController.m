@@ -8,7 +8,6 @@
 
 #import "ParamViewController.h"
 #import "AppDelegate.h"
-
 #define ButtonTitleConnect @"Connect"
 #define ButtonTitleCancel @"Cancel"
 #define ButtonTitleDisconnect @"Disconnect"
@@ -20,6 +19,7 @@
     NSMutableArray* allCountryArray;
     NSMutableArray* protocolArray;
     BOOL useOptimize;
+    BOOL useSmartDialing;
     AppDelegate* appDelegate;
 }
 @end
@@ -53,11 +53,8 @@
         if(self.shareInstance.getCurrentVPNStatus == CONNECTED){
             [self.shareInstance disconnectVPN];
         }else if(self.shareInstance.getCurrentVPNStatus == DISCONNECTED){
-            
             [self.vpnButton setTitle:ButtonTitleCancel];
-            if(useOptimize) [self connectWithOptimizeParams:sender];
-            else
-                [self connectWithParams:sender];
+            [self connectWithParams:sender];
             
         }else {
             [self.vpnButton setTitle:ButtonTitleCancel];
@@ -65,15 +62,22 @@
         }
     }
 }
-- (IBAction)actionUserOptimize:(id)sender {
-    NSButton* btnUseOptimize = (NSButton*)sender;
-    
-    if(btnUseOptimize.state){
-        useOptimize = true;
-    }else{
-        useOptimize = false;
+-(IBAction)actionBtnOptimizeCountry:(id)sender {
+    if(self.btnOptimizeCountry.state) {
+        [self.btnSmartDialing setState:NSControlStateValueOff];
     }
 }
+
+-(IBAction)actionBtnSmartDialing:(id)sender {
+    if(self.btnSmartDialing.state) {
+        [self getSmartCountries];
+        [self.btnOptimizeCountry setState:NSControlStateValueOff];
+    }
+    else {
+        [self getCountries:nil];
+    }
+}
+
 - (void)cancleConnection{
     [self.shareInstance cancelVPN];
 }
@@ -82,38 +86,6 @@
 }
 
 #pragma mark VPNConnection Examples
-
-- (void)connectWithOptimizeParams:(id)sender {
-    
-    //Implement statusDidChangedHandler
-    [self setupVPNSDKStateChangeManager];
-    
-    if(appDelegate.isAutoGenerateUserCredential){
-        //Initialize with universally unique identifiers
-        self.shareInstance.UUID = appDelegate.uuid;
-    }else{
-        //Initialize with credential
-        [AtomManager sharedInstance].atomCredential = [[AtomCredential alloc] initWithAtomCredentialUsername:appDelegate.username setPassword:appDelegate.userPassword];
-    }
-    //initialize with country
-    AtomCountry* countryObj = [self getUserSelectedCountryObject];//COUNTRY_ID
-    
-    //initialize with protocol
-    AtomProtocol* protocolObj = [self getUserSelectedProtocolObject];//PROTOCOL
-    
-    //initialize with property
-    AtomProperties* properties = [[AtomProperties alloc] initWithCountry:countryObj protocol:protocolObj];
-    [properties setUseOptimization:YES];
-    
-    //Connect with params
-    [self.shareInstance connectWithProperties:properties completion:^(NSString *success) {
-        NSLog(@"success");
-    } errorBlock:^(NSError *error) {
-        NSLog(@"error  %@",error);
-        [self.txtLogs setString: error.description];
-        [self.vpnButton setTitle:ButtonTitleConnect];
-    }];
-}
 
 - (void)connectWithParams:(id)sender {
     
@@ -125,7 +97,7 @@
         self.shareInstance.UUID = appDelegate.uuid;
     }else{
         //Initialize with credential
-        self.shareInstance.atomCredential = [[AtomCredential alloc] initWithAtomCredentialUsername:appDelegate.username setPassword:appDelegate.userPassword];
+        self.shareInstance.atomCredential = [[AtomCredential alloc] initWithUsername:appDelegate.username password:appDelegate.userPassword];
     }
     //initialize with country
     AtomCountry* countryObj = [self getUserSelectedCountryObject];//COUNTRY_ID
@@ -136,12 +108,14 @@
     
     //initialize with property
     AtomProperties* properties = [[AtomProperties alloc] initWithCountry:countryObj protocol:protocolObj];
+    properties.useOptimization = self.btnOptimizeCountry.state;
+    properties.useSmartDialing = self.btnSmartDialing.state;
     
     //Connect with properties
     [self.shareInstance connectWithProperties:properties completion:^(NSString *success) {
-        NSLog(@"success");
+        //NSLog(@"success");
     } errorBlock:^(NSError *error) {
-        NSLog(@"error  %@",error);
+        //NSLog(@"error  %@",error);
          [self.txtLogs setString: error.description];
         [self.vpnButton setTitle:ButtonTitleConnect];
     }];
@@ -176,17 +150,18 @@
     [alert runModal];
 }
 #pragma mark sdk delegates
-- (void)atomManagerDidConnect{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+
+-(void)atomManagerDidConnect:(AtomConnectionDetails *)atomConnectionDetails{
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
-- (void)atomManagerDidDisconnect:(BOOL)manuallyDisconnected{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+- (void)atomManagerDidDisconnect:(AtomConnectionDetails *)atomConnectionDetails{
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 - (void)atomManagerOnRedialing:(AtomConnectionDetails *)atomConnectionDetails withError:(NSError *)error{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 - (void)atomManagerDialErrorReceived:(NSError *)error withConnectionDetails:(AtomConnectionDetails *)atomConnectionDetails{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 #pragma mark statusDidChangedHandler
 - (void)setupVPNSDKStateChangeManager {
@@ -250,7 +225,7 @@
     for(int i = 0; i<allCountryArray.count; i++ ){
         AtomCountry* countryObject = [allCountryArray objectAtIndex:i];
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"number == %d", protocol.number];
-        NSArray *protocol = [countryObject.protocol filteredArrayUsingPredicate:predicate];
+        NSArray *protocol = [countryObject.protocols filteredArrayUsingPredicate:predicate];
         if(protocol.count)
             [countryArray addObject:countryObject];
         
@@ -259,11 +234,10 @@
 }
 #pragma mark Invantory
 - (void)getOptimizCountries:(id)sender {
-    [[AtomManager sharedInstance] getOptimizeCountriesWithSuccess:^(NSArray<AtomCountry *> *success) {
-        //NSLog(@"%@",success);
+    [[AtomManager sharedInstance] getOptimizedCountriesWithSuccess:^(NSArray<AtomCountry *> *success) {
         for(int i =0; i<[success count];i++){
             AtomCountry * obj = [success objectAtIndex:i];
-            NSLog(@"%lu %d",(unsigned long)[obj.protocol count],obj.latency);
+            //NSLog(@"%lu %d",(unsigned long)[obj.protocols count],obj.latency);
         }
     } errorBlock:^(NSError *error) {
         
@@ -292,20 +266,26 @@
         [self.protocolComboBox reloadData];
         
     } errorBlock:^(NSError *error) {
-        NSLog(@"error  %@",error);
+        //NSLog(@"error  %@",error);
     }];
 }
 - (void)getCountries:(id)sender {
     [[AtomManager sharedInstance] getCountriesWithSuccess:^(NSArray<AtomCountry *> *success) {
         allCountryArray = [[NSMutableArray alloc] initWithArray:success];
         countryArray = [[NSMutableArray alloc] initWithArray:allCountryArray];
-        
         [self loadCountryInComboBox:allCountryArray];
-        
-        
     } errorBlock:^(NSError *error) {
-        NSLog(@"error  %@",error);
         
+    }];
+}
+-(void)getSmartCountries {
+    [[AtomManager sharedInstance] getCountriesForSmartDialing:^(NSArray<AtomCountry *> *countriesList) {
+        allCountryArray = [[NSMutableArray alloc] initWithArray:countriesList];
+        countryArray = [[NSMutableArray alloc] initWithArray:allCountryArray];
+        if (countryArray.count > 0)
+            [self loadCountryInComboBox:allCountryArray];
+    } errorBlock:^(NSError *error) {
+        //NSLog(@"%@",error.description);
     }];
 }
 - (void)loadCountryInComboBox:(NSArray*)countryObjects{

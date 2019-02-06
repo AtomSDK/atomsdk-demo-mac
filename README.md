@@ -5,6 +5,8 @@ This is a demo application for MAC Applications with basic usage of ATOM VPN SDK
 * Connection with Pre-Shared Key (PSK)
 * Connection with Dedicated IP
 * Connection with Real-time Optimized Servers (Countries based on latency from user in Real-time)
+* Connection with Smart Dialing (Use getCountriesForSmartDialing() to get the Advanced VPN Dialing supported countries)
+
 ## Compatibility
 * Compatible with Xcode 9 and OS X 10.11 and later
 * Compatible with ATOM SDK Version 1.0.4 and onwards
@@ -46,7 +48,6 @@ It can be initialized using an instance of AtomConfiguration. It should have a v
 AtomConfiguration *atomConfiguration = [[AtomConfiguration alloc] init];
 atomConfiguration.secretKey = @"<#SECRETKEY_GOES_HERE#>>";
 atomConfiguration.vpnInterfaceName = @"Atom";
-atomConfiguration.baseUrl = [NSURL URLWithString:@"<#YOUR_BASE_URL#>"];
 [AtomManager sharedInstanceWithAtomConfiguration:atomConfiguration];
 ```
 
@@ -88,6 +89,12 @@ AtomProperties* properties = [[AtomProperties alloc] initWithCountry:@"<#country
 You can get the Countries list through ATOM SDK.
 ```
 [[AtomManager sharedInstance] getCountriesWithSuccess:^(NSArray<AtomCountry *> *success) {}
+} errorBlock:^(NSError *error) {}];
+```
+## Fetch Countries For Smart Dialing
+You can get the Countries those support Smart Dialing through ATOM SDK.
+```
+[[AtomManager sharedInstance] getCountriesForSmartDialing:^(NSArray<AtomCountry *> *success) {}
 } errorBlock:^(NSError *error) {}];
 ```
 ## Fetch Protocols
@@ -138,6 +145,14 @@ errorBlock:^(NSError *error) {}];
 ```
 If you want to show your user the best location for him on your GUI then ATOM SDK have it ready for you as well! ATOM SDK has a method exposed namely “getOptimizedCountries” which adds a property “latency” in the country object which has the real-time latency of all countries from your user’s location (only if ping is enabled on your user’s system and ISP doesn’t blocks any of our datacenters). You can use this property to find the best speed countries from your user’s location.
 
+### Connection with Smart Dialing
+“Connection with Parameters” with a slight addition of using smart dialing to connect. You just need to call "withSmartDialing" and rest will handled by the ATOM SDK.
+```
+AtomProperties* properties = [[AtomProperties alloc] initWithCountry:@"<#country#>" protocol:@"<#protocol#>"];
+[properties setUseSmartDialing:YES];
+[[AtomManager sharedInstance] connectWithProperties:properties completion:^(NSString *success) {}
+errorBlock:^(NSError *error) {}];
+```
 For more information, please see the inline documentation of AtomProperties Class.
 
 # Cancel VPN Connection
@@ -154,5 +169,4 @@ To disconnect, simply call the disconnectVPN  method of AtomManager.
 The current version of the VPN Atom SDK uses the following library under the hood:
 
 * NEVPNManager
-
 

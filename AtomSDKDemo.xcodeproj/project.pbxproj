@@ -153,7 +153,6 @@
 				TargetAttributes = {
 					9A353B501F29EB0E0049A64F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4H849Z7V2K;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.VPNLite = {
@@ -324,7 +323,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AtomSDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.vpn.mac;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atom.vpn.demo.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -345,7 +344,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AtomSDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.vpn.mac;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atom.vpn.demo.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

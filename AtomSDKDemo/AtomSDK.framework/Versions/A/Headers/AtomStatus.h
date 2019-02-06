@@ -8,45 +8,48 @@
 #ifndef AtomStatus_h
 #define AtomStatus_h
 
+/*!
+ * @typedef AtomVPNStatus
+ * @abstract AtomVPN status codes
+ */
+
 typedef NS_ENUM (NSInteger, AtomVPNState) {
-    /*! @const AtomStatusInvalid The VPN is not configured. 0 */
+    /*! @const AtomStatusInvalid The VPN is not configured. */
     AtomStatusInvalid,
-    /*! @const AtomStatusDisconnected The VPN is disconnected. 1 */
+    /*! @const AtomStatusDisconnected The VPN is disconnected. */
     AtomStatusDisconnected,
-    /*! @const AtomStatusConnecting The VPN is connecting. 2 */
+    /*! @const AtomStatusConnecting The VPN is connecting. */
     AtomStatusConnecting,
-    /*! @const AtomStatusConnected The VPN is connected. 3 */
+    /*! @const AtomStatusConnected The VPN is connected. */
     AtomStatusConnected,
-    /*! @const AtomStatusReasserting The VPN is reconnecting following loss of underlying network connectivity. 4 */
+    /*! @const AtomStatusReasserting The VPN is reconnecting following loss of underlying network connectivity. */
     AtomStatusReasserting,
-    /*! @const AtomStatusDisconnecting The VPN is disconnecting. 5 */
+    /*! @const AtomStatusDisconnecting The VPN is disconnecting. */
     AtomStatusDisconnecting,
-    /*! @const AtomStatusValidation The VPN is Validat. 6 */
+    /*! @const AtomStatusValidation The VPN is Validating. */
     AtomStatusValidating,
-    /*! @const GeneratingCredentials The VPN is disconnecting. 7 */
+    /*! @const GeneratingCredentials The VPN is disconnecting. */
     AtomStatusGeneratingCredentials,
-    /*! @const AtomStatusGettingFastestServer The VPN is disconnecting. 8 */
+    /*! @const AtomStatusGettingFastestServer The VPN is disconnecting. */
     AtomStatusGettingFastestServer,
-    /*! @const OptimizingConnection The VPN is disconnecting. 9 */
+    /*! @const OptimizingConnection The VPN is disconnecting. */
     AtomStatusOptimizingConnection,
-    /*! @const AtomStatusAuthenticating The VPN is AtomStatusAuthenticating. 10 */
-    AtomStatusAuthenticating,
-    /*! @const AtomStatusVerifyingHostName The VPN is AtomStatusVerifyingHostName. 11 */
-    AtomStatusVerifyingHostName
+    /*! @const AtomStatusVerifyingHostName The VPN is AtomStatusVerifyingHostName. */
+    AtomStatusVerifyingHostName,
+    /*! @const AtomStatusAuthenticating The VPN is AtomStatusAuthenticating. */
+    AtomStatusAuthenticating
 };
+typedef void (^StateDidChangedHandler)(AtomVPNState status);
 
 typedef NS_ENUM (NSInteger, AtomVPNStatus) {
-
     /*! @const DISCONNECTED The VPN is disconnected. */
     DISCONNECTED,
     /*! @const CONNECTING The VPN is connecting. */
     CONNECTING,
     /*! @const CONNECTED The VPN is connected. */
-    CONNECTED,
-
+    CONNECTED
 };
 
-
-typedef void (^StateDidChangedHandler)(AtomVPNState status);
+typedef void (^OnPacketsTransmitted)(NSNumber *bytesReceived , NSNumber *bytesSent);
 
 #endif /* AtomStatus_h */

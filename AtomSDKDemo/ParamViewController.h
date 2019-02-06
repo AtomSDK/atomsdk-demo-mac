@@ -13,7 +13,8 @@
 
 @property (nonatomic, strong) AtomManager* shareInstance;
 
-@property (weak) IBOutlet NSButton *userOptimize;
+@property (weak) IBOutlet NSButton *btnOptimizeCountry;
+@property (weak) IBOutlet NSButton *btnSmartDialing;
 @property (unsafe_unretained) IBOutlet NSTextView *txtLogs;
 @property (weak) IBOutlet NSButton *vpnButton;
 @property (weak) IBOutlet NSComboBox *countryComboBox;

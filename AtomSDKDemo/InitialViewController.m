@@ -20,6 +20,7 @@
     // Insert code here to initialize your application
    
 }
+
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if (self.txtSecretKey.stringValue.length>0) {
         AppDelegate* appDelegate = ((AppDelegate *)[NSApplication sharedApplication].delegate);

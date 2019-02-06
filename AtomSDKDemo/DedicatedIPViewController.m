@@ -79,12 +79,11 @@
         [AtomManager sharedInstance].UUID = appDelegate.uuid;
     }else{
         //Initialize with credential
-         [AtomManager sharedInstance].atomCredential = [[AtomCredential alloc] initWithAtomCredentialUsername:appDelegate.username setPassword:appDelegate.userPassword];
+         [AtomManager sharedInstance].atomCredential = [[AtomCredential alloc] initWithUsername:appDelegate.username password:appDelegate.userPassword];
     }
     
     //initialize with protocol
     AtomProtocol* protocolObj = [self getUserSelectedProtocolObject];
-    
     
     //initialize Property
     AtomProperties* properties = [[AtomProperties alloc] initWithDedicatedHostName:self.txtDedicatedIP.stringValue protocol:protocolObj];
@@ -92,9 +91,9 @@
     
     //Connect with properties
     [self.shareInstance connectWithProperties:properties completion:^(NSString *success) {
-        NSLog(@"success");
+        //NSLog(@"success");
     } errorBlock:^(NSError *error) {
-        NSLog(@"error  %@",error);
+        //NSLog(@"error  %@",error);
         [self.txtLogs setString: error.description];
         [self.vpnButton setTitle:ButtonTitleConnect];
     }];
@@ -137,16 +136,16 @@
 }
 #pragma mark sdk delegates
 - (void)atomManagerDidConnect{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 - (void)atomManagerDidDisconnect:(BOOL)manuallyDisconnected{
-      NSLog(@"%s",__PRETTY_FUNCTION__);
+      //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 - (void)atomManagerOnRedialing:(AtomConnectionDetails *)atomConnectionDetails withError:(NSError *)error{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 - (void)atomManagerDialErrorReceived:(NSError *)error withConnectionDetails:(AtomConnectionDetails *)atomConnectionDetails{
-      NSLog(@"%s",__PRETTY_FUNCTION__);
+      //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 
 #pragma mark statusDidChangedHandler
@@ -213,7 +212,7 @@
         [self.protocolComboBox selectItemAtIndex:0];
         [self.protocolComboBox reloadData];
     } errorBlock:^(NSError *error) {
-        NSLog(@"error  %@",error);
+        //NSLog(@"error  %@",error);
     }];
 }
 @end

@@ -8,7 +8,6 @@
 
 #import "PSKViewController.h"
 #import "AppDelegate.h"
-
 #define ButtonTitleConnect @"Connect"
 #define ButtonTitleCancel @"Cancel"
 #define ButtonTitleDisconnect @"Disconnect"
@@ -68,17 +67,16 @@
         self.shareInstance.UUID = appDelegate.uuid;
     }else{
         //Initialize with credential
-        self.shareInstance.atomCredential = [[AtomCredential alloc] initWithAtomCredentialUsername:appDelegate.username setPassword:appDelegate.userPassword];
+        self.shareInstance.atomCredential = [[AtomCredential alloc] initWithUsername:appDelegate.username password:appDelegate.userPassword];
     }
     //initialize with property
-    AtomProperties* properties = [[AtomProperties alloc] initWithPreShareKey:self.txtPreSharedKey.stringValue];
+    AtomProperties* properties = [[AtomProperties alloc] initWithPreSharedKey:self.txtPreSharedKey.stringValue];
     
     //Connect with properties
     [self.shareInstance connectWithProperties:properties completion:^(NSString *success) {
-        NSLog(@"success");
         
     } errorBlock:^(NSError *error) {
-        NSLog(@"error  %@",error);
+        //NSLog(@"error  %@",error);
         [self.txtLogs setString: error.description];
         [self.vpnButton setTitle:ButtonTitleConnect];
     }];
@@ -111,17 +109,17 @@
     [alert runModal];
 }
 #pragma mark sdk delegates
-- (void)atomManagerDidConnect{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+- (void)atomManagerDidConnect:(AtomConnectionDetails *)atomConnectionDetails{
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
-- (void)atomManagerDidDisconnect:(BOOL)manuallyDisconnected{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+- (void)atomManagerDidDisconnect:(AtomConnectionDetails *)atomConnectionDetails{
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 - (void)atomManagerOnRedialing:(AtomConnectionDetails *)atomConnectionDetails withError:(NSError *)error{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 - (void)atomManagerDialErrorReceived:(NSError *)error withConnectionDetails:(AtomConnectionDetails *)atomConnectionDetails{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 #pragma mark statusDidChangedHandler
 - (void)setupVPNSDKStateChangeManager {
