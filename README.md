@@ -14,7 +14,7 @@ This is a demo application for MAC Applications with basic usage of ATOM VPN SDK
 ## Supported Protocols
 * IPSec
 ## SDK Installation
-Although ATOM SDK Framework is already provided with the demo application but you can install the latest version through [this link](https://secure.com/atom/downloads/sdk/Mac/2.0/AtomSDK.zip)
+Although ATOM SDK Framework is already provided with the demo application but you can install the latest version through [this link](https://secure.com/atom/downloads/sdk/Mac/2.2.0/AtomSDK.zip)
 
 # Getting Started with the Code
 To add the SDK in Xcode:
