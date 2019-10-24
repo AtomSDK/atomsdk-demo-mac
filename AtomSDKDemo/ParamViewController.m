@@ -13,11 +13,16 @@
 #define ButtonTitleDisconnect @"Disconnect"
 
 
-@interface ParamViewController ()
-{
+@interface ParamViewController () {
     NSMutableArray* countryArray;
     NSMutableArray* allCountryArray;
     NSMutableArray* protocolArray;
+    
+    NSMutableArray<AtomCity *> *allCityArray;
+    NSMutableArray<AtomChannel *> *allChannelArray;
+    
+    NSArray<AtomCity *> *filteredCityArray;
+    NSArray<AtomChannel *> *filteredChannelArray;
     BOOL useOptimize;
     BOOL useSmartDialing;
     AppDelegate* appDelegate;
@@ -35,19 +40,39 @@
     [self setupVPNSDKStateChangeManager];
     [self.txtLogs setTextColor:[NSColor whiteColor]];
     protocolArray = [NSMutableArray new];
+    allCityArray = [NSMutableArray new];
+    allChannelArray = [NSMutableArray new];
 }
 - (void)viewWillAppear{
     if(protocolArray.count == 0)
         [self getProtocol:nil];
+    
     if(countryArray.count == 0)
         [self getCountries:nil];
     
+    if(allCityArray.count == 0)
+        [self getCities:nil];
+    
+    if(allChannelArray.count == 0)
+        [self getChannels:nil];
+    
     if(self.shareInstance.getCurrentVPNStatus == CONNECTED){
         [self.vpnButton setTitle:ButtonTitleDisconnect];
-    }else if(self.shareInstance.getCurrentVPNStatus == DISCONNECTED){
+    }
+    else if(self.shareInstance.getCurrentVPNStatus == DISCONNECTED){
         [self.vpnButton setTitle:ButtonTitleConnect];
     }
+    [self countryFilterByProtocol];
 }
+
+- (IBAction)actionSelectConnectionType: (id)sender {
+    for (int i=30; i<=32; i++) {
+        ((NSButton *)[self.view viewWithTag:i]).state = NSOffState;
+    }
+    NSButton *radioButton = (NSButton *) sender;
+    radioButton.state = NSOnState;
+}
+
 - (IBAction)buttonAction:(id)sender {
     if([self validateCredentials]){
         if(self.shareInstance.getCurrentVPNStatus == CONNECTED){
@@ -99,15 +124,39 @@
         //Initialize with credential
         self.shareInstance.atomCredential = [[AtomCredential alloc] initWithUsername:appDelegate.username password:appDelegate.userPassword];
     }
-    //initialize with country
-    AtomCountry* countryObj = [self getUserSelectedCountryObject];//COUNTRY_ID
     
     //initialize with protocol
     AtomProtocol* protocolObj = [self getUserSelectedProtocolObject];//PROTOCOL
     
+    //initialize with country
+    AtomCountry* countryObj = [self getUserSelectedCountryObject];//Country
+    AtomCity *selectedCity = [self getUserSelectedCityObject]; //City
+    AtomChannel *selectedChannel = [self getUserSelectedChannelObject]; //Channel
     
-    //initialize with property
-    AtomProperties* properties = [[AtomProperties alloc] initWithCountry:countryObj protocol:protocolObj];
+    AtomProperties* properties = nil;
+    
+    //Check Selected Connection Type
+    NSButton *radioCountry = [self.view viewWithTag:30];
+    NSButton *radioCity = [self.view viewWithTag:31];
+    NSButton *radioChannel = [self.view viewWithTag:32];
+    
+    //Initialize Property
+    if (selectedCity != nil && selectedCity.name.length > 0 && radioCity.state == NSOnState) {
+        properties = [[AtomProperties alloc] initWithCity:selectedCity protocol:protocolObj];
+    }
+    else if (countryObj!= nil && countryObj.country.length > 0 && radioCountry.state == NSOnState) {
+        properties = [[AtomProperties alloc] initWithCountry:countryObj protocol:protocolObj];
+        
+    }
+    else if (selectedChannel != nil && selectedChannel.channelId > 0 && radioChannel.state == NSOnState) {
+        properties = [[AtomProperties alloc] initWithChannel:selectedChannel protocol:protocolObj];
+    }
+    else {
+        [self showAlert: @"Please select any source (Country, City or Channel)"];
+    }
+    
+    
+    //Mutate the Property
     properties.useOptimization = self.btnOptimizeCountry.state;
     properties.useSmartDialing = self.btnSmartDialing.state;
     
@@ -120,6 +169,7 @@
         [self.vpnButton setTitle:ButtonTitleConnect];
     }];
 }
+
 - (BOOL)validateCredentials{
     [self.txtLogs setString: @""];
     if(appDelegate.isAutoGenerateUserCredential){
@@ -213,25 +263,42 @@
 }
 #pragma mark comboBox Notifications
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification{
-    
-    if(notification.object == self.protocolComboBox && countryArray.count){
+    NSComboBox *comboxBox = (NSComboBox *) notification.object;
+    if(comboxBox.tag == 1 && countryArray.count > 0){
         [self countryFilterByProtocol];
     }
+    else if (comboxBox.tag == 2) {
+        [self filterCityByCountry];
+    }
 }
+
 - (void)countryFilterByProtocol{
     [countryArray removeAllObjects];
-    AtomProtocol* protocol = [protocolArray objectAtIndex:self.protocolComboBox.indexOfSelectedItem];
+    NSInteger index = self.protocolComboBox.indexOfSelectedItem;
+    index = index > 0 ? index : 0;
+    AtomProtocol* protocol = [protocolArray objectAtIndex: index];
     
-    for(int i = 0; i<allCountryArray.count; i++ ){
-        AtomCountry* countryObject = [allCountryArray objectAtIndex:i];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"number == %d", protocol.number];
-        NSArray *protocol = [countryObject.protocols filteredArrayUsingPredicate:predicate];
-        if(protocol.count)
-            [countryArray addObject:countryObject];
-        
+    for (AtomCountry *country in allCountryArray) {
+        if ([country.protocols filteredArrayUsingPredicate: [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary*  bindings) {
+            AtomProtocol *selectedProtocol = (AtomProtocol *) evaluatedObject;
+            return [selectedProtocol.protocol isEqualToString: protocol.protocol];
+        }]].firstObject != nil) {
+            [countryArray addObject:country];
+        }
     }
     [self loadCountryInComboBox:countryArray];
 }
+
+-(void) filterCityByCountry {
+    AtomCountry *selectedCountry = [self getUserSelectedCountryObject];
+    filteredCityArray = [allCityArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        AtomCity *city = (AtomCity *) evaluatedObject;
+        return [city.country isEqualToString:selectedCountry.country];
+    }]];
+    [self loadCityInComboBox:filteredCityArray];
+}
+
+
 #pragma mark Invantory
 - (void)getOptimizCountries:(id)sender {
     [[AtomManager sharedInstance] getOptimizedCountriesWithSuccess:^(NSArray<AtomCountry *> *success) {
@@ -244,10 +311,38 @@
     }];
 }
 - (AtomCountry*)getUserSelectedCountryObject{
-    return [countryArray objectAtIndex:self.countryComboBox.indexOfSelectedItem];
+    NSInteger index = self.countryComboBox.indexOfSelectedItem;
+    if (index >= 0 && index < countryArray.count)
+        return [countryArray objectAtIndex:index];
+    else
+        return nil;
 }
+
 - (AtomProtocol*)getUserSelectedProtocolObject{
-    return [protocolArray objectAtIndex:self.protocolComboBox.indexOfSelectedItem];
+    NSInteger index = self.protocolComboBox.indexOfSelectedItem;
+    if (index >= 0 && index < countryArray.count)
+        return [protocolArray objectAtIndex:index];
+    else
+        return nil;
+}
+
+- (AtomCity*)getUserSelectedCityObject{
+    NSInteger index = self.cityComboBox.indexOfSelectedItem;
+    if (filteredCityArray != nil && filteredCityArray.count > 0 && index >= 0 && index < filteredCityArray.count) {
+        return [filteredCityArray objectAtIndex:index];
+    }
+    else if (index >= 0 && index < allCityArray.count)
+        return [allCityArray objectAtIndex:index];
+    else
+        return nil;
+}
+
+- (AtomChannel*)getUserSelectedChannelObject{
+    NSInteger index = self.channelComboBox.indexOfSelectedItem;
+    if (index >= 0 && index < countryArray.count)
+        return [allChannelArray objectAtIndex:index];
+    else
+        return nil;
 }
 
 - (void)getProtocol:(id)sender {
@@ -278,6 +373,25 @@
         
     }];
 }
+
+- (void)getCities:(id) sender {
+    [[AtomManager sharedInstance] getCitiesWithSuccess:^(NSArray<AtomCity *> *success) {
+        allCityArray = [[NSMutableArray alloc] initWithArray:success];
+        [self loadCityInComboBox:allCityArray];
+    } errorBlock:^(NSError *error) {
+        
+    }];
+}
+
+- (void)getChannels:(id)sender {
+    [[AtomManager sharedInstance] getChannelsWithSuccess:^(NSArray<AtomChannel *> *success) {
+        allChannelArray = [[NSMutableArray alloc] initWithArray:success];
+        [self loadChannelInComboBox:allChannelArray];
+    } errorBlock:^(NSError *error) {
+        
+    }];
+}
+
 -(void)getSmartCountries {
     [[AtomManager sharedInstance] getCountriesForSmartDialing:^(NSArray<AtomCountry *> *countriesList) {
         allCountryArray = [[NSMutableArray alloc] initWithArray:countriesList];
@@ -285,9 +399,9 @@
         if (countryArray.count > 0)
             [self loadCountryInComboBox:allCountryArray];
     } errorBlock:^(NSError *error) {
-        //NSLog(@"%@",error.description);
     }];
 }
+
 - (void)loadCountryInComboBox:(NSArray*)countryObjects{
    NSMutableArray *countryTitleArray = [NSMutableArray new];
     for(int i =0; i<[countryObjects count];i++){
@@ -297,8 +411,34 @@
     [self.countryComboBox removeAllItems];
     [self.countryComboBox setDelegate:self];
     [self.countryComboBox addItemsWithObjectValues:countryTitleArray];
-    [self.countryComboBox selectItemAtIndex:0];
     [self.countryComboBox reloadData];
     
 }
+
+- (void)loadCityInComboBox:(NSArray*) cityObjects {
+   NSMutableArray *cityTitleArray = [NSMutableArray new];
+    for(int i =0; i<[cityObjects count];i++){
+        AtomCity * obj = [cityObjects objectAtIndex:i];
+        [cityTitleArray addObject:obj.name];
+    }
+    [self.cityComboBox removeAllItems];
+    [self.cityComboBox setDelegate:self];
+    [self.cityComboBox addItemsWithObjectValues:cityTitleArray];
+    [self.cityComboBox reloadData];
+    
+}
+
+- (void)loadChannelInComboBox:(NSArray*) channelObjects {
+   NSMutableArray *channelTitleArray = [NSMutableArray new];
+    for(int i =0; i<[channelObjects count];i++){
+        AtomChannel * obj = [channelObjects objectAtIndex:i];
+        [channelTitleArray addObject:obj.name];
+    }
+    [self.channelComboBox removeAllItems];
+    [self.channelComboBox setDelegate:self];
+    [self.channelComboBox addItemsWithObjectValues:channelTitleArray];
+    [self.channelComboBox reloadData];
+    
+}
+
 @end
