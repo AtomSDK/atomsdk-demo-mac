@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310E2F1DC133BA053CEFACAA /* Pods_AtomSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9343894EF9BB9BB9ECBF0B4 /* Pods_AtomSDKDemo.framework */; };
 		9A721ADD207B6CEC002F7220 /* DedicatedIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721ACC207B6CEC002F7220 /* DedicatedIPViewController.m */; };
-		9A721ADE207B6CEC002F7220 /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721ACD207B6CEC002F7220 /* AtomSDK.framework */; };
 		9A721ADF207B6CEC002F7220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A721ACF207B6CEC002F7220 /* Assets.xcassets */; };
 		9A721AE0207B6CEC002F7220 /* CredentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD1207B6CEC002F7220 /* CredentialViewController.m */; };
 		9A721AE1207B6CEC002F7220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A721AD2207B6CEC002F7220 /* Main.storyboard */; };
@@ -18,7 +18,6 @@
 		9A721AE5207B6CEC002F7220 /* ParamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD9207B6CEC002F7220 /* ParamViewController.m */; };
 		9A721AE6207B6CEC002F7220 /* PSKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721ADA207B6CEC002F7220 /* PSKViewController.m */; };
 		9A721AEE207B7F23002F7220 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721AED207B7F23002F7220 /* NetworkExtension.framework */; };
-		9A721AF0207B7F3B002F7220 /* AtomSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721ACD207B6CEC002F7220 /* AtomSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9A721AF0207B7F3B002F7220 /* AtomSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,10 +34,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		635325BFF7E684AAEC4053D5 /* Pods-AtomSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9A353B511F29EB0E0049A64F /* AtomSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtomSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A721ACB207B6CEC002F7220 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9A721ACC207B6CEC002F7220 /* DedicatedIPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DedicatedIPViewController.m; sourceTree = "<group>"; };
-		9A721ACD207B6CEC002F7220 /* AtomSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AtomSDK.framework; sourceTree = "<group>"; };
 		9A721ACE207B6CEC002F7220 /* ParamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamViewController.h; sourceTree = "<group>"; };
 		9A721ACF207B6CEC002F7220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A721AD0207B6CEC002F7220 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
@@ -56,6 +54,8 @@
 		9A721AEB207B7EE0002F7220 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A721AED207B7F23002F7220 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		9A721AEF207B7F23002F7220 /* AtomSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AtomSDKDemo.entitlements; sourceTree = "<group>"; };
+		D9343894EF9BB9BB9ECBF0B4 /* Pods_AtomSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomSDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDD6AAD62C7EDC135799878E /* Pods-AtomSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKDemo.release.xcconfig"; path = "Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,20 +63,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A721ADE207B6CEC002F7220 /* AtomSDK.framework in Frameworks */,
 				9A721AEE207B7F23002F7220 /* NetworkExtension.framework in Frameworks */,
+				310E2F1DC133BA053CEFACAA /* Pods_AtomSDKDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		025E033E748BC408613F7905 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				635325BFF7E684AAEC4053D5 /* Pods-AtomSDKDemo.debug.xcconfig */,
+				DDD6AAD62C7EDC135799878E /* Pods-AtomSDKDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9A353B481F29EB0E0049A64F = {
 			isa = PBXGroup;
 			children = (
 				9A721ACA207B6CEC002F7220 /* AtomSDKDemo */,
 				9A353B521F29EB0E0049A64F /* Products */,
 				9A353B6D1F29EC110049A64F /* Frameworks */,
+				025E033E748BC408613F7905 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				9A721AED207B7F23002F7220 /* NetworkExtension.framework */,
+				D9343894EF9BB9BB9ECBF0B4 /* Pods_AtomSDKDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -100,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				9A721AEF207B7F23002F7220 /* AtomSDKDemo.entitlements */,
-				9A721ACD207B6CEC002F7220 /* AtomSDK.framework */,
 				9A721ACB207B6CEC002F7220 /* AppDelegate.h */,
 				9A721AD6207B6CEC002F7220 /* AppDelegate.m */,
 				9A721AD0207B6CEC002F7220 /* InitialViewController.h */,
@@ -128,10 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A353B651F29EB0E0049A64F /* Build configuration list for PBXNativeTarget "AtomSDKDemo" */;
 			buildPhases = (
+				88CA0D8BDF5A40B9211C299A /* [CP] Check Pods Manifest.lock */,
 				9A353B4D1F29EB0E0049A64F /* Sources */,
 				9A353B4E1F29EB0E0049A64F /* Frameworks */,
 				9A353B4F1F29EB0E0049A64F /* Resources */,
 				9A353B6C1F29EB620049A64F /* Embed Frameworks */,
+				D9D0F9BED8F7AE62FBFBC4B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +165,7 @@
 				TargetAttributes = {
 					9A353B501F29EB0E0049A64F = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5YDUR67SED;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.VPNLite = {
@@ -167,6 +180,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -191,6 +205,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		88CA0D8BDF5A40B9211C299A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AtomSDKDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9D0F9BED8F7AE62FBFBC4B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo-frameworks.sh",
+				"${PODS_ROOT}/AtomCore/AtomCore-OSX/AtomCore.framework",
+				"${PODS_ROOT}/AtomSDKBySecure/AtomSDK/AtomSDK-OSX/AtomSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AtomCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AtomSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9A353B4D1F29EB0E0049A64F /* Sources */ = {
@@ -310,19 +369,20 @@
 		};
 		9A353B661F29EB0E0049A64F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 635325BFF7E684AAEC4053D5 /* Pods-AtomSDKDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AtomSDKDemo/AtomSDKDemo.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5YDUR67SED;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AtomSDKDemo",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AtomSDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.atom.vpn.demo.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -331,19 +391,20 @@
 		};
 		9A353B671F29EB0E0049A64F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDD6AAD62C7EDC135799878E /* Pods-AtomSDKDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AtomSDKDemo/AtomSDKDemo.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5YDUR67SED;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AtomSDKDemo",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AtomSDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.atom.vpn.demo.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

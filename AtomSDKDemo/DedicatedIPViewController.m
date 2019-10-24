@@ -17,6 +17,7 @@
 {
     NSMutableArray* protocolArray;
     AppDelegate* appDelegate;
+    NSMutableDictionary<NSString*, NSNumber*> *selectedTags;
 }
 @end
 
@@ -45,84 +46,163 @@
     }else if(self.shareInstance.getCurrentVPNStatus == DISCONNECTED){
         [self.vpnButton setTitle:ButtonTitleConnect];
         
+        [self populateTags];
+        
+        _tagsTableview.dataSource = self;
+        _tagsTableview.delegate = self;
+        [_tagsTableview setAllowsMultipleSelection:YES];
+        
     }
 }
+
+- (IBAction)actionSelectConnectionType: (id)sender {
+    for (int i=35; i<=36; i++) {
+        ((NSButton *)[self.view viewWithTag:i]).state = NSOffState;
+    }
+    NSButton *radioButton = (NSButton *) sender;
+    radioButton.state = NSOnState;
+}
+
+
 - (IBAction)buttonAction:(id)sender {
     if([self validateCredentials]){
-    if(self.shareInstance.getCurrentVPNStatus == CONNECTED){
-        [self.vpnButton setTitle:ButtonTitleConnect];
-        [self.shareInstance disconnectVPN];
-    }else if(self.shareInstance.getCurrentVPNStatus == DISCONNECTED){
-        [self.vpnButton setTitle:ButtonTitleCancel];
-        [self connectWithDedicatedIP:sender];
-    }else {
-        [self.vpnButton setTitle:ButtonTitleCancel];
-        [self.shareInstance cancelVPN];
-    }
+        if(self.shareInstance.getCurrentVPNStatus == CONNECTED){
+            [self.vpnButton setTitle:ButtonTitleConnect];
+            [self.shareInstance disconnectVPN];
+        }
+        else if(self.shareInstance.getCurrentVPNStatus == DISCONNECTED){
+            [self.vpnButton setTitle:ButtonTitleCancel];
+            [self connectVPN:sender];
+        }
+        else {
+            [self.vpnButton setTitle:ButtonTitleCancel];
+            [self.shareInstance cancelVPN];
+        }
     }
 }
 - (void)cancleConnection{
     [self.shareInstance cancelVPN];
 }
+
 - (void)disconnectConnection{
     [self.shareInstance disconnectVPN];
 }
+
+- (void) connectVPN: (id)sender {
+    NSButton *radioDedicated = (NSButton *) [self.view viewWithTag:35];
+    if (radioDedicated.state == NSOnState) {
+        [self connectWithDedicatedIP:sender];
+    }
+    else {
+        [self connectWithTags];
+    }
+}
+
 - (void)connectWithDedicatedIP:(id)sender {
+    if (_txtDedicatedIP.stringValue != nil && _txtDedicatedIP.stringValue.length > 0) {
+        //initialize with protocol
+        AtomProtocol* protocolObj = [self validateAndGetProtocol];
     
+        //initialize Property
+        AtomProperties* properties = [[AtomProperties alloc] initWithDedicatedHostName:self.txtDedicatedIP.stringValue protocol:protocolObj];
     
+        //Connect with properties
+        [self.shareInstance connectWithProperties:properties completion:^(NSString *success) {
+            //NSLog(@"success");
+        } errorBlock:^(NSError *error) {
+            //NSLog(@"error  %@",error);
+            [self.txtLogs setString: error.description];
+            [self.vpnButton setTitle:ButtonTitleConnect];
+        }];
+    }
+    else {
+        [self showAlert: @"Please provide Dedicated Host/IP"];
+    }
+    
+}
+
+- (void)connectWithTags {
+    //initialize with protocol
+    AtomProtocol* protocolObj = [self validateAndGetProtocol];
+    
+    //initialize with tags - optional
+    NSMutableArray *selectedAtomTags = nil;
+    if (selectedTags.count > 0) {
+        NSArray<NSNumber *> *selectedTagsValues = [selectedTags allValues];
+        selectedAtomTags = [NSMutableArray new];
+        if (selectedTagsValues != nil && selectedTagsValues.count > 0) {
+            for (int i=0; i<selectedTagsValues.count; i++) {
+                [selectedAtomTags addObject: @([[selectedTagsValues objectAtIndex:i] intValue])];
+            }
+        }
+    }
+    
+    @try {
+        if ([self.shareInstance isSmartConnectAvailableOnProtocol:protocolObj andTags:selectedAtomTags]) {
+        
+            //initialize with property
+            AtomProperties* properties = [[AtomProperties alloc] initWithProtocol: protocolObj andTags: selectedAtomTags];
+        
+            //Connect with properties
+            [self.shareInstance connectWithProperties:properties completion:^(NSString *success) {
+                //NSLog(@"success");
+            } errorBlock:^(NSError *error) {
+                //NSLog(@"error  %@",error);
+                [self.txtLogs setString: error.description];
+                [self.vpnButton setTitle:ButtonTitleConnect];
+            }];
+        }
+        else {
+            [self showAlert: @"Smart Connect Not Available"];
+        }
+    } @catch (NSException *exception) {
+        [self showAlert:exception.reason];
+    } @finally {
+        
+    }
+    
+}
+
+- (AtomProtocol *) validateAndGetProtocol {
     //Implement statusDidChangedHandler
     [self setupVPNSDKStateChangeManager];
     
-    //Initialize with credential
     if(appDelegate.isAutoGenerateUserCredential){
         //Initialize with universally unique identifiers
-        [AtomManager sharedInstance].UUID = appDelegate.uuid;
+        self.shareInstance.UUID = appDelegate.uuid;
     }else{
         //Initialize with credential
-         [AtomManager sharedInstance].atomCredential = [[AtomCredential alloc] initWithUsername:appDelegate.username password:appDelegate.userPassword];
+        self.shareInstance.atomCredential = [[AtomCredential alloc] initWithUsername:appDelegate.username password:appDelegate.userPassword];
     }
     
-    //initialize with protocol
-    AtomProtocol* protocolObj = [self getUserSelectedProtocolObject];
-    
-    //initialize Property
-    AtomProperties* properties = [[AtomProperties alloc] initWithDedicatedHostName:self.txtDedicatedIP.stringValue protocol:protocolObj];
-    if(self.skipUserVerification.state) properties.skipUserVerification = YES;
-    
-    //Connect with properties
-    [self.shareInstance connectWithProperties:properties completion:^(NSString *success) {
-        //NSLog(@"success");
-    } errorBlock:^(NSError *error) {
-        //NSLog(@"error  %@",error);
-        [self.txtLogs setString: error.description];
-        [self.vpnButton setTitle:ButtonTitleConnect];
-    }];
-    
+    //Return Protocol
+    return [self getUserSelectedProtocolObject];//PROTOCOL
 }
+
 - (BOOL)validateCredentials{
-     [self.txtLogs setString: @""];
+    [self.txtLogs setString: @""];
     
     if(appDelegate.isAutoGenerateUserCredential){
         if(appDelegate.uuid.length == 0){
             [self showAlert:@"UUID is required for generating vpn credentials to connect VPN."];
             return false;
-        }else if(self.txtDedicatedIP.stringValue.length == 0 || (protocolArray.count == 0)){
+        }
+        else if(self.txtDedicatedIP.stringValue.length == 0 || (protocolArray.count == 0)){
             [self showAlert:@"Enter a host and select a protocol to continue."];
             return false;
-        }return true;
-    }else{
-    if(appDelegate.username.length == 0){
-        [self showAlert:@"Username & Password is required for connecting VPN."];
-        return false;
-    }else if(appDelegate.userPassword.length == 0){
-        [self showAlert:@"Username & Password is required for connecting VPN."];
-        return false;
-    }else if(self.txtDedicatedIP.stringValue.length == 0 || (protocolArray.count == 0)){
-        [self showAlert:@"Enter a host and select a protocol to continue."];
-        return false;
+        }
+        return true;
     }
+    else{
+        if(appDelegate.username.length == 0){
+            [self showAlert:@"Username & Password is required for connecting VPN."];
+            return false;
+        }
+        else if(appDelegate.userPassword.length == 0){
+            [self showAlert:@"Username & Password is required for connecting VPN."];
+            return false;
+        }
     }
-   
     
     return true;
 }
@@ -215,4 +295,49 @@
         //NSLog(@"error  %@",error);
     }];
 }
+
+- (void) populateTags {
+    _tagList = [[NSArray alloc] initWithObjects:
+                @"SmartConnectAutomatic",
+                @"SmartConnectFileSharing",
+                @"SmartConnectFreeFilesharing",
+                @"SmartConnectAutomaticFileSharing",
+                @"SmartConnectFreeUsers",
+                @"SmartConnectNatted",
+                @"SmartConnectNattedFileSharing",
+                @"SmartConnectPaid",
+                @"SmartConnectAvfFileSharing",
+                @"SmartConnectAvfSecurity",
+                nil];
+    
+    if (selectedTags == nil) selectedTags = [NSMutableDictionary new];
+}
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return self.tagList.count;
+}
+
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    return [_tagList objectAtIndex: row];
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    NSTableCellView *cell = [tableView makeViewWithIdentifier: @"TagCell" owner:self];
+    cell.textField.stringValue = [_tagList objectAtIndex:row];
+    return cell;
+}
+
+- (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn {
+    NSLog(@"Selection");
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+    NSInteger column = [[notification object] selectedRow];
+    NSLog(@"Tag: %@", [_tagList objectAtIndex:column]);
+    if (![selectedTags objectForKey:_tagList[column]])
+        selectedTags[_tagList[column]] = @(column);
+    else
+        [selectedTags removeObjectForKey:_tagList[column]];
+}
+
+
 @end
