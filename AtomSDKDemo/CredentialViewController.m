@@ -30,6 +30,8 @@
     [self.txtUserName setDelegate:self];
     [self.txtPassword setDelegate:self];
     [self.txtUUID setDelegate:self];
+    
+    
 }
 
 - (IBAction)autoGenerateUserCredential:(id)sender {
