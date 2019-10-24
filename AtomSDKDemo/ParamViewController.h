@@ -18,5 +18,7 @@
 @property (unsafe_unretained) IBOutlet NSTextView *txtLogs;
 @property (weak) IBOutlet NSButton *vpnButton;
 @property (weak) IBOutlet NSComboBox *countryComboBox;
+@property (weak) IBOutlet NSComboBox *cityComboBox;
+@property (weak) IBOutlet NSComboBox *channelComboBox;
 @property (weak) IBOutlet NSComboBox *protocolComboBox;
 @end
