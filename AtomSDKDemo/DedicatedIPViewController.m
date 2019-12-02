@@ -2,18 +2,19 @@
 //  DedicatedIPViewController.m
 //  AtomSDKDemo
 //
-//        
-//  Copyright © 2018  Atom. All rights reserved.
+//
+//  Copyright © AtomBySecure 2019 Atom. All rights reserved.
 //
 
 #import "DedicatedIPViewController.h"
 #import "AppDelegate.h"
+#import "TagTableViewCell.h"
 
 #define ButtonTitleConnect @"Connect"
 #define ButtonTitleCancel @"Cancel"
 #define ButtonTitleDisconnect @"Disconnect"
 
-@interface DedicatedIPViewController ()
+@interface DedicatedIPViewController () <CellDidChange>
 {
     NSMutableArray* protocolArray;
     AppDelegate* appDelegate;
@@ -121,6 +122,7 @@
     
 }
 
+
 - (void)connectWithTags {
     //initialize with protocol
     AtomProtocol* protocolObj = [self validateAndGetProtocol];
@@ -156,7 +158,9 @@
             [self showAlert: @"Smart Connect Not Available"];
         }
     } @catch (NSException *exception) {
+        [self.vpnButton setTitle:ButtonTitleConnect];
         [self showAlert:exception.reason];
+        
     } @finally {
         
     }
@@ -321,8 +325,10 @@
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    NSTableCellView *cell = [tableView makeViewWithIdentifier: @"TagCell" owner:self];
-    cell.textField.stringValue = [_tagList objectAtIndex:row];
+    TagTableViewCell *cell = [tableView makeViewWithIdentifier: @"TagCell" owner:self];
+    cell.tagCell.title = [_tagList objectAtIndex:row];
+    cell.delegate = self;
+    cell.rowNumber = row;
     return cell;
 }
 
@@ -331,12 +337,14 @@
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
-    NSInteger column = [[notification object] selectedRow];
-    NSLog(@"Tag: %@", [_tagList objectAtIndex:column]);
-    if (![selectedTags objectForKey:_tagList[column]])
-        selectedTags[_tagList[column]] = @(column);
+    
+}
+
+- (void) cellDidSelected: (BOOL) isSelected withName: (NSString *_Nullable) name atRow: (NSNumber *) row {
+    if (isSelected)
+        selectedTags[name] = row;
     else
-        [selectedTags removeObjectForKey:_tagList[column]];
+        [selectedTags removeObjectForKey: name];
 }
 
 

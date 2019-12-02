@@ -2,8 +2,8 @@
 //  ParamViewController.m
 //  AtomSDKDemo
 //
-//      
-//  Copyright © 2018  Atom. All rights reserved.
+//
+//  Copyright © AtomBySecure 2019 Atom. All rights reserved.
 //
 
 #import "ParamViewController.h"
@@ -146,7 +146,6 @@
     }
     else if (countryObj!= nil && countryObj.country.length > 0 && radioCountry.state == NSOnState) {
         properties = [[AtomProperties alloc] initWithCountry:countryObj protocol:protocolObj];
-        
     }
     else if (selectedChannel != nil && selectedChannel.channelId > 0 && radioChannel.state == NSOnState) {
         properties = [[AtomProperties alloc] initWithChannel:selectedChannel protocol:protocolObj];
@@ -312,18 +311,14 @@
 }
 - (AtomCountry*)getUserSelectedCountryObject{
     NSInteger index = self.countryComboBox.indexOfSelectedItem;
-    if (index >= 0 && index < countryArray.count)
-        return [countryArray objectAtIndex:index];
-    else
-        return nil;
+    index = index >= 0 ? index : 0;
+    return [countryArray objectAtIndex:index];
 }
 
 - (AtomProtocol*)getUserSelectedProtocolObject{
     NSInteger index = self.protocolComboBox.indexOfSelectedItem;
-    if (index >= 0 && index < countryArray.count)
-        return [protocolArray objectAtIndex:index];
-    else
-        return nil;
+    index = index >= 0 ? index : 0;
+    return [protocolArray objectAtIndex:index];
 }
 
 - (AtomCity*)getUserSelectedCityObject{
