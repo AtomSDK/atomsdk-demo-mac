@@ -2,8 +2,8 @@
 //  PSKViewController.m
 //  AtomSDKDemo
 //
-//        
-//  Copyright © 2018  Atom. All rights reserved.
+//
+//  Copyright © AtomBySecure 2019 Atom. All rights reserved.
 //
 
 #import "PSKViewController.h"

@@ -998,13 +998,13 @@ DQ
                                     <action selector="buttonAction:" target="dO4-82-OgF" id="vmc-fq-LOM"/>
                                 </connections>
                             </button>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zR6-PX-DYg">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zR6-PX-DYg">
                                 <rect key="frame" x="171" y="293" width="660" height="214"/>
                                 <clipView key="contentView" id="VZF-eS-u9P">
                                     <rect key="frame" x="1" y="0.0" width="658" height="213"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="6ek-Uy-J42" viewBased="YES" id="f6v-01-SyK">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="22" rowSizeStyle="automatic" headerView="6ek-Uy-J42" viewBased="YES" id="f6v-01-SyK">
                                             <rect key="frame" x="0.0" y="0.0" width="658" height="188"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -1024,22 +1024,24 @@ DQ
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="TagCell" id="PA8-Ef-N8E">
+                                                        <tableCellView identifier="TagCell" id="PA8-Ef-N8E" customClass="TagTableViewCell">
                                                             <rect key="frame" x="1" y="1" width="655" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UuV-Hc-Bkn">
-                                                                    <rect key="frame" x="0.0" y="-1" width="654" height="23"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Anq-C0-r00">
+                                                                <button toolTip="If checked, fastest servers will be fetched based on the smartest ping response." id="7fI-Kw-Ujh">
+                                                                    <rect key="frame" x="0.0" y="4" width="655" height="18"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <buttonCell key="cell" type="check" title="Tag Name" bezelStyle="regularSquare" imagePosition="left" inset="2" id="T7u-XZ-40f">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                         <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="actionAddTag:" target="PA8-Ef-N8E" id="kDx-6C-0q2"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <connections>
-                                                                <outlet property="textField" destination="UuV-Hc-Bkn" id="31t-gf-P9C"/>
+                                                                <outlet property="tagCell" destination="7fI-Kw-Ujh" id="xLq-fS-Uem"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>

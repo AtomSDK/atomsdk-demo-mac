@@ -2,7 +2,7 @@
 //  ViewController.m
 //   AtomSDKDemo
 //
-//  Copyright ©  2018  Atom. All rights reserved.
+//  Copyright © AtomBySecure 2019 Atom. All rights reserved.
 //
 
 #import "CredentialViewController.h"
@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     NSWindow *window = [NSApplication sharedApplication].windows[0];
     [window setDelegate:self];
     appDelegate = ((AppDelegate *)[NSApplication sharedApplication].delegate);
@@ -30,8 +31,6 @@
     [self.txtUserName setDelegate:self];
     [self.txtPassword setDelegate:self];
     [self.txtUUID setDelegate:self];
-    
-    
 }
 
 - (IBAction)autoGenerateUserCredential:(id)sender {

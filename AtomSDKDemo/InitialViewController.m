@@ -2,8 +2,8 @@
 //  InitialViewController.m
 //  AtomSDKDemo
 //
-//       
-//  Copyright © 2018  Atom. All rights reserved.
+//
+//  Copyright © AtomBySecure 2019 Atom. All rights reserved.
 //
 
 #import "InitialViewController.h"
@@ -16,9 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
-    // Insert code here to initialize your application
-   
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
