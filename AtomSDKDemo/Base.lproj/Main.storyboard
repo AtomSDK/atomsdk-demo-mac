@@ -755,13 +755,13 @@ DQ
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Ig0-ng-goX">
-                                <rect key="frame" x="10" y="615" width="830" height="132"/>
+                                <rect key="frame" x="10" y="604" width="830" height="143"/>
                                 <view key="contentView" id="78G-Yp-aV6">
-                                    <rect key="frame" x="1" y="1" width="828" height="130"/>
+                                    <rect key="frame" x="1" y="1" width="828" height="141"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="abt-Xf-Lcj">
-                                            <rect key="frame" x="13" y="18" width="70" height="16"/>
+                                            <rect key="frame" x="13" y="16" width="70" height="16"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Username:" id="FCf-IW-kHc">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -769,7 +769,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField toolTip="Credentials required for connection when &quot;Auto Generate user credentials&quot; is not checked." verticalHuggingPriority="750" tag="201" translatesAutoresizingMaskIntoConstraints="NO" id="1MF-cj-5hU">
-                                            <rect key="frame" x="86" y="16" width="327" height="21"/>
+                                            <rect key="frame" x="86" y="14" width="327" height="21"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Username" drawsBackground="YES" id="Qct-7l-u64">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -777,7 +777,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Enw-6q-fRU">
-                                            <rect key="frame" x="419" y="18" width="66" height="16"/>
+                                            <rect key="frame" x="419" y="16" width="66" height="16"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password:" id="Qg4-oX-t0r">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -785,7 +785,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c0r-hU-I7q">
-                                            <rect key="frame" x="13" y="104" width="77" height="16"/>
+                                            <rect key="frame" x="13" y="120" width="77" height="16"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Secret Key: " id="CEJ-UG-Od5">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -793,7 +793,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MkC-hb-PLN">
-                                            <rect key="frame" x="96" y="104" width="724" height="16"/>
+                                            <rect key="frame" x="96" y="120" width="724" height="16"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="pcY-Rn-QJS">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -801,7 +801,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qGg-NH-651">
-                                            <rect key="frame" x="13" y="76" width="40" height="16"/>
+                                            <rect key="frame" x="13" y="96" width="40" height="16"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="UUID:" id="pqg-CO-eeb">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -809,7 +809,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField toolTip="A unique user identifier such as an email, to generate username and password" verticalHuggingPriority="750" tag="203" translatesAutoresizingMaskIntoConstraints="NO" id="enJ-OM-1x8">
-                                            <rect key="frame" x="67" y="74" width="751" height="21"/>
+                                            <rect key="frame" x="67" y="94" width="751" height="21"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Unique identifier" drawsBackground="YES" id="Z60-I9-HGK">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -817,7 +817,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <button toolTip="If checked, a unique user identifier (UUID) is required to generate username and password." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S5H-FZ-eQ5">
-                                            <rect key="frame" x="13" y="50" width="209" height="18"/>
+                                            <rect key="frame" x="13" y="72" width="209" height="18"/>
                                             <buttonCell key="cell" type="check" title="Auto generate user credentials" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Xhe-cI-QZQ">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -827,37 +827,50 @@ DQ
                                             </connections>
                                         </button>
                                         <textField toolTip="Credentials required for connection when &quot;Auto Generate user credentials&quot; is not checked." verticalHuggingPriority="750" tag="202" translatesAutoresizingMaskIntoConstraints="NO" id="4Tl-Cb-Sft">
-                                            <rect key="frame" x="493" y="16" width="327" height="21"/>
+                                            <rect key="frame" x="493" y="14" width="327" height="21"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" id="Lcf-RD-dTe">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wqP-xE-ggW">
+                                            <rect key="frame" x="9" y="35" width="815" height="32"/>
+                                            <buttonCell key="cell" type="push" title="Remove Profile" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RlE-i3-MmT">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="removeVPNProfile:" target="gnx-t3-9jA" id="4ux-UC-yze"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="MkC-hb-PLN" firstAttribute="centerY" secondItem="c0r-hU-I7q" secondAttribute="centerY" id="0T9-RQ-a3j"/>
                                         <constraint firstItem="enJ-OM-1x8" firstAttribute="leading" secondItem="qGg-NH-651" secondAttribute="trailing" constant="16" id="0mm-DU-W33"/>
-                                        <constraint firstItem="S5H-FZ-eQ5" firstAttribute="top" secondItem="qGg-NH-651" secondAttribute="bottom" constant="10" id="2RV-Ix-Yaw"/>
+                                        <constraint firstItem="S5H-FZ-eQ5" firstAttribute="top" secondItem="qGg-NH-651" secondAttribute="bottom" constant="8" id="2RV-Ix-Yaw"/>
                                         <constraint firstItem="S5H-FZ-eQ5" firstAttribute="leading" secondItem="78G-Yp-aV6" secondAttribute="leading" constant="15" id="Aio-g1-cpk"/>
+                                        <constraint firstItem="wqP-xE-ggW" firstAttribute="top" secondItem="S5H-FZ-eQ5" secondAttribute="bottom" constant="11" id="NGD-aD-nzw"/>
                                         <constraint firstItem="4Tl-Cb-Sft" firstAttribute="width" secondItem="1MF-cj-5hU" secondAttribute="width" id="OP0-sF-t48"/>
                                         <constraint firstItem="MkC-hb-PLN" firstAttribute="leading" secondItem="c0r-hU-I7q" secondAttribute="trailing" constant="10" id="PYY-28-WKS"/>
                                         <constraint firstItem="enJ-OM-1x8" firstAttribute="centerY" secondItem="qGg-NH-651" secondAttribute="centerY" id="SON-li-TYe"/>
                                         <constraint firstItem="1MF-cj-5hU" firstAttribute="centerY" secondItem="abt-Xf-Lcj" secondAttribute="centerY" id="SnK-uI-rdI"/>
                                         <constraint firstItem="4Tl-Cb-Sft" firstAttribute="centerY" secondItem="Enw-6q-fRU" secondAttribute="centerY" id="U86-7v-riw"/>
                                         <constraint firstAttribute="trailing" secondItem="enJ-OM-1x8" secondAttribute="trailing" constant="10" id="YIi-ic-LLy"/>
+                                        <constraint firstItem="abt-Xf-Lcj" firstAttribute="top" secondItem="wqP-xE-ggW" secondAttribute="bottom" constant="10" id="acx-vk-gf0"/>
+                                        <constraint firstAttribute="trailing" secondItem="wqP-xE-ggW" secondAttribute="trailing" constant="10" id="fDN-WJ-bMH"/>
                                         <constraint firstItem="Enw-6q-fRU" firstAttribute="leading" secondItem="1MF-cj-5hU" secondAttribute="trailing" constant="8" id="fZN-b0-eJi"/>
                                         <constraint firstItem="4Tl-Cb-Sft" firstAttribute="leading" secondItem="Enw-6q-fRU" secondAttribute="trailing" constant="10" id="hcL-Tf-mjV"/>
                                         <constraint firstItem="Enw-6q-fRU" firstAttribute="centerY" secondItem="1MF-cj-5hU" secondAttribute="centerY" id="iy7-FD-dqf"/>
                                         <constraint firstItem="qGg-NH-651" firstAttribute="leading" secondItem="78G-Yp-aV6" secondAttribute="leading" constant="15" id="jpV-Kq-zeZ"/>
-                                        <constraint firstItem="qGg-NH-651" firstAttribute="top" secondItem="c0r-hU-I7q" secondAttribute="bottom" constant="12" id="kuB-Fz-Xvq"/>
+                                        <constraint firstItem="qGg-NH-651" firstAttribute="top" secondItem="c0r-hU-I7q" secondAttribute="bottom" constant="8" id="kuB-Fz-Xvq"/>
                                         <constraint firstItem="1MF-cj-5hU" firstAttribute="width" secondItem="78G-Yp-aV6" secondAttribute="width" multiplier="1/2" constant="-87" id="lcT-VW-gAP"/>
                                         <constraint firstItem="1MF-cj-5hU" firstAttribute="leading" secondItem="abt-Xf-Lcj" secondAttribute="trailing" constant="5" id="mA5-dq-CW4"/>
                                         <constraint firstItem="c0r-hU-I7q" firstAttribute="leading" secondItem="78G-Yp-aV6" secondAttribute="leading" constant="15" id="mzF-Pm-YpG"/>
                                         <constraint firstAttribute="trailing" secondItem="MkC-hb-PLN" secondAttribute="trailing" constant="10" id="qee-o4-wni"/>
-                                        <constraint firstItem="c0r-hU-I7q" firstAttribute="top" secondItem="78G-Yp-aV6" secondAttribute="top" constant="10" id="qgV-n1-qbL"/>
+                                        <constraint firstItem="c0r-hU-I7q" firstAttribute="top" secondItem="78G-Yp-aV6" secondAttribute="top" constant="5" id="qgV-n1-qbL"/>
                                         <constraint firstItem="abt-Xf-Lcj" firstAttribute="leading" secondItem="S5H-FZ-eQ5" secondAttribute="leading" id="rnQ-an-Slc"/>
-                                        <constraint firstItem="abt-Xf-Lcj" firstAttribute="top" secondItem="S5H-FZ-eQ5" secondAttribute="bottom" constant="18" id="vXR-CA-xGI"/>
+                                        <constraint firstItem="wqP-xE-ggW" firstAttribute="leading" secondItem="S5H-FZ-eQ5" secondAttribute="leading" id="uTe-LW-lPj"/>
                                     </constraints>
                                 </view>
                             </box>
@@ -874,7 +887,7 @@ DQ
                             <constraint firstItem="yQX-wN-km5" firstAttribute="top" secondItem="zqI-ow-xUs" secondAttribute="top" constant="150" id="EP6-gt-w6B"/>
                             <constraint firstItem="yQX-wN-km5" firstAttribute="leading" secondItem="zqI-ow-xUs" secondAttribute="leading" id="WpR-ge-Stn"/>
                             <constraint firstAttribute="bottom" secondItem="yQX-wN-km5" secondAttribute="bottom" id="aKA-3n-S4G"/>
-                            <constraint firstItem="yQX-wN-km5" firstAttribute="top" secondItem="78G-Yp-aV6" secondAttribute="bottom" constant="16" id="aY8-JR-pVZ"/>
+                            <constraint firstItem="yQX-wN-km5" firstAttribute="top" secondItem="78G-Yp-aV6" secondAttribute="bottom" constant="5" id="aY8-JR-pVZ"/>
                             <constraint firstItem="Ig0-ng-goX" firstAttribute="top" secondItem="zqI-ow-xUs" secondAttribute="top" constant="3" id="f8i-zG-3DW"/>
                             <constraint firstAttribute="trailing" secondItem="Ig0-ng-goX" secondAttribute="trailing" constant="10" id="sxe-H5-mvg"/>
                         </constraints>

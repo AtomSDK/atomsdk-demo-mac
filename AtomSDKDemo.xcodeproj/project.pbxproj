@@ -220,7 +220,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo-frameworks.sh",
 				"${PODS_ROOT}/AtomCore/AtomCore-OSX/AtomCore.framework",
-				"${PODS_ROOT}/AtomSDKBySecure/AtomSDK/AtomSDK-OSX/AtomSDK.framework",
+				"${PODS_ROOT}/AtomSDKBySecure/AtomSDK-OSX/AtomSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
