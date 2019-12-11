@@ -7,6 +7,7 @@
 
 #import "CredentialViewController.h"
 #import "AppDelegate.h"
+#import <AtomSDK/AtomSDK.h>
 
 @interface CredentialViewController()<NSTextFieldDelegate>{
     AppDelegate* appDelegate;
@@ -58,6 +59,18 @@
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
     // Update the view, if already loaded.
+}
+
+- (IBAction) removeVPNProfile :(id)sender {
+    [[AtomManager sharedInstance] removeVPNProfileWithCompletion:^(BOOL isSuccess) {
+        [self getVPNRemoveProfileUpdateWithMessage: isSuccess ? @"YES" : @"NO"];
+    }];
+}
+
+- (void) getVPNRemoveProfileUpdateWithMessage: (NSString *) message {
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText: [NSString stringWithFormat:@"VPN Profile Removed: %@", message]];
+    [alert runModal];
 }
 
 #pragma mark NSTextFiled delegate
