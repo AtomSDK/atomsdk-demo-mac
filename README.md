@@ -1,8 +1,8 @@
-# ATOM VPN SDK demo for iOS Applications
-This is a demo application for iOS Applications with basic usage of ATOM VPN SDK which will help the developers to create smooth applications over ATOM SDK quickly.
+# ATOM VPN SDK demo for macOS Applications
+This is a demo application for macOS Applications with basic usage of ATOM VPN SDK which will help the developers to create smooth applications over ATOM SDK quickly.
 
 ## SDK Features covered in this Demo
-* Connection with Parameters    
+* Connection with Parameters	
 * Connection with Pre-Shared Key (PSK)
 * Connection with Dedicated IP
 * Connection with Multiple Protocols (Auto-Retry Functionality)
@@ -11,17 +11,16 @@ This is a demo application for iOS Applications with basic usage of ATOM VPN SDK
 * Connection with Smart Connect (Tags based dialing)
 
 ## Compatibility
-* Compatible with Xcode 11 and iOS 10 and later
+* Compatible with Xcode 11 and OS X 10.12 and later
 * Compatible with ATOM SDK Version 3.0 and onwards
 
 
 ## Supported Protocols
 * IPSec
-* IKEv2
 
 
 ## SDK Installation
-Although ATOM SDK Framework is already provided with the demo application but you can install the latest version through [this link](https://secure.com/atom/downloads/sdk/ios/3.2.0/AtomSDK.zip). 
+Although ATOM SDK Framework is already provided with the demo application but you can install the latest version through [this link](https://secure.com/atom/downloads/sdk/ios/3.2.0/AtomSDK.zip).
 
 ### CocoaPods
 
@@ -46,9 +45,9 @@ To add the SDK in Xcode:
 
 6.    Go to your project -> General tab from your app target, add the framework using ‘+’ to the Embedded Binaries section.
 
-8.    After the setup is completed, you should be able to use all the classes from the SDK by including it with the #import <AtomSDK/AtomSDK.h> directive.
+7.    After the setup is completed, you should be able to use all the classes from the SDK by including it with the #import <AtomSDK/AtomSDK.h> directive.
 
-9.    ATOM SDK needs to be initialized with a “SecretKey” provided to you after you buy the subscription which is typically a hex-numeric literal.
+8.    ATOM SDK needs to be initialized with a “SecretKey” provided to you after you buy the subscription which is typically a hex-numeric literal.
 
 
 Using App Secret Key
@@ -193,7 +192,7 @@ For more information, please see the inline documentation of AtomProperties Clas
 
 ### Connection with Smart Connect
 If you want us to connect your user with what's best for him, you can now do it using *_SmartConnect_* feature. Atom has introduced an enum list of feature a.k.a *_Tags_* you want to apply over those smart connections which can be found under  *_Atom.Core.AtomSmartConnectTag_*. An example usage of SmartConnect is depicted below.
-```csharp
+```
 
 NSArray *selectedAtomTags = [[NSArray alloc] initWithObjects: @(AtomSmartConnectTagFileSharing),@(AtomSmartConnectTagPaid), nil];
 
@@ -227,38 +226,13 @@ To disconnect, simply call the disconnectVPN method of AtomManager.
 ```
 [[AtomManager sharedInstance] disconnectVPN];
 ```
+
 # Remove VPN Profile
 To remove VPN profile, simply call the removeVPNProfileWithCompletion method of AtomManager.
 ```
 [[AtomManager sharedInstance] removeVPNProfileWithCompletion:^(BOOL isSuccess) {
 }];
 ```
-
-# Distributing to App Store
-While distributing application to app store developer should add Run Script in Build phase before the app can be submitted to the iTunes App Store. This type of “Fat Binary” framework will not pass the App Store validation process, so we will need to strip the simulator architecture version from the framework using the following shell script. When you build and archive the app for release, the fat binaries will be stripped and the app can be submitted to the iTunes App Store.
-
-Select the Project in xcode, Choose Target → Project Name → Select Build Phases → Press “+” → New Run Script Phase → Name the Script as “Remove Unused Architectures Script”.
-
-```
-FRAMEWORK="AtomSDK"
-echo "Trimming $FRAMEWORK..."
-FRAMEWORK_EXECUTABLE_PATH="${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/$FRAMEWORK.framework/$FRAMEWORK"
-EXTRACTED_ARCHS=()
-for ARCH in $ARCHS
-do
-echo "Extracting $ARCH..."
-lipo -extract "$ARCH" "$FRAMEWORK_EXECUTABLE_PATH" -o "$FRAMEWORK_EXECUTABLE_PATH-$ARCH"
-EXTRACTED_ARCHS+=("$FRAMEWORK_EXECUTABLE_PATH-$ARCH")
-done
-echo "Merging binaries..."
-lipo -o "$FRAMEWORK_EXECUTABLE_PATH-merged" -create "${EXTRACTED_ARCHS[@]}"
-rm "${EXTRACTED_ARCHS[@]}"
-rm "$FRAMEWORK_EXECUTABLE_PATH"
-mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
-echo "Done."
-```
-Thats all !!
-This run script removes the unused simulator architectures only while pushing the application to the App Store.
 
 ## Note:
 The current version of the VPN Atom SDK uses the following library under the hood:
