@@ -20,7 +20,7 @@ This is a demo application for macOS Applications with basic usage of ATOM VPN S
 
 
 ## SDK Installation
-Although ATOM SDK Framework is already provided with the demo application but you can install the latest version through [this link](https://secure.com/atom/downloads/sdk/mac/3.3.0/AtomSDK.zip).
+Although ATOM SDK Framework is already provided with the demo application but you can install the latest version through [this link](https://secure.com/atom/downloads/sdk/mac/3.3.1/AtomSDK.zip).
 
 ### CocoaPods
 
