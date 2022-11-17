@@ -23,14 +23,11 @@
         AppDelegate* appDelegate = ((AppDelegate *)[NSApplication sharedApplication].delegate);
         appDelegate.secretKey = self.txtSecretKey.stringValue;
         
-        self.shareInstance = [AtomManager sharedInstanceWithSecretKey:self.txtSecretKey.stringValue];
-        /*
          AtomConfiguration *atomConfiguration = [[AtomConfiguration alloc] init];
-         atomConfiguration.secretKey = @"<#SECRETKEY_GOES_HERE#>>";
+         atomConfiguration.secretKey = self.txtSecretKey.stringValue;
          atomConfiguration.vpnInterfaceName = @"Atom";
-         atomConfiguration.baseUrl = [NSURL URLWithString:@"<#YOUR_BASE_URL#>"];
-         [AtomManager sharedInstanceWithAtomConfiguration:atomConfiguration];
-        */
+        self.shareInstance = [AtomManager sharedInstanceWithAtomConfiguration:atomConfiguration];
+        
         
         if(self.shareInstance) return YES;
         return NO;
