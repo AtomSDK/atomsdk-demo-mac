@@ -361,7 +361,7 @@ Press Plus sign under **Framework and Libraries**
 and select AtomOPVPNTunnel.xcframework, AtomSDKTunnel.xcframework, LZ4.xcframework, mbedTLS.xcframework, OpenVPNClient.xcframework for OpenVPN specific System Extension
 
 
-![9.png](./_resources/779d8879516d4080b7bbf4870db2c169.png)
+![9.png](./_resources/779d8879516d4080b7bbf4870db2c169.2.png)
 
 
 and select AtomWireguardTunnel for Wireguard specific System Extension
