@@ -11,7 +11,7 @@ This is a demo application for macOS Applications with basic usage of ATOM VPN S
 * Connection with Smart Connect (Tags based dialing)
 
 ## Compatibility
-* Compatible with Xcode 11 and OS X 10.12 and later
+* Compatible with Xcode 12 and OS X 10.13 and later
 * Compatible with ATOM SDK Version 5.0 and onwards
 
 
