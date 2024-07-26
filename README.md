@@ -10,8 +10,9 @@ This is a demo application for macOS Applications with basic usage of ATOM VPN S
 * Connection with Smart Dialing (Use getCountriesForSmartDialing() to get the Advanced VPN Dialing supported countries)
 * Connection with Smart Connect (Tags based dialing)
 
+
 ## Compatibility
-* Compatible with Xcode 12 and OS X 10.13 and later
+* Compatible with Xcode 15.3, macOS 10.13 and later
 * Compatible with ATOM SDK Version 5.0 and onwards
 
 
@@ -37,7 +38,7 @@ pod 'AtomSDKTunnel'
 ### Integrate AtomWireguardTunnel in macOS App for Wireguard Protocol
 You can add AtomWireguardTunnel package via Swift Package Manager
 
-1. Open your project in Xcode 12.0 or above
+1. Open your project in Xcode 15.3 or above
 2. Go to File > Swift Packages > Add Package Dependency...
 3. In the field Enter package repository URL, enter "https://github.com/AtomSDK/AtomWireguardTunnel"
 4. Choose Dependency Rule "Branch", and add the branch name "main"
@@ -46,20 +47,14 @@ You can add AtomWireguardTunnel package via Swift Package Manager
 # Getting Started with the Code
 To add the SDK in Xcode:
 
-1.    Open your Xcode project.
-
-2.    Add your developer account to Xcode from Preferences -> Account if you didn't add before.
-
-3.    Select General tab from your app target and then set your developer account details.
-
-4.    From your app target select Capabilities tab and select the switch right of the Personal VPN.   Then select the capabilties you are going to use.
-
-5.    Drag and drop AtomSDK.framework into your project.
-
-6.    Go to your project -> General tab from your app target, add the framework using ‘+’ to the      Embedded Binaries section.
-
-8.    After the setup is completed, you should be able to use all the classes from the SDK by including it with the #import <AtomSDK/AtomSDK.h> directive.
-9.    ATOM SDK needs to be initialized with a “SecretKey” provided to you after you buy the subscription which is typically a hex-numeric literal.
+1. Open your Xcode project.
+2. Add your developer account to Xcode from Preferences -> Account if you didn't add before.
+3. Select General tab from your app target and then set your developer account details.
+4. From your app target select Capabilities tab and select the switch right of the Personal VPN. Then select the capabilties you are going to use.
+5. Drag and drop AtomSDK.framework into your project. (Skip if using Cocoapods)
+6. Go to your project -> General tab from your app target, add the framework using ‘+’ to the Embedded Binaries section. (Skip if using Cocoapods)
+8. After the setup is completed, you should be able to use all the classes from the SDK by including it with the #import <AtomSDK/AtomSDK.h> directive.
+9. ATOM SDK needs to be initialized with a “SecretKey” provided to you after you buy the subscription which is typically a hex-numeric literal.
 
 It can be initialized using an instance of AtomConfiguration. It should have a vpnInterfaceName which will be used to create the Network Interface for VPN connection. 
 
