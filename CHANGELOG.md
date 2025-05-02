@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Version 6.0.2
 
-#### Added
+#### Fixed
 - Fix Install Profile Issue On Runtime Remove Profile.
 
 ### Version 6.0.1
