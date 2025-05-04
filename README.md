@@ -521,6 +521,8 @@ atomProperties.allowLocalNetworkTraffic = false
 The following properties are available in the connection details related to this feature:
 - `isAllowLocalNetworkTrafficRequested`: Returns a boolean indicating whether the LAN access is requested.
 
+**NOTE:** The LAN access feature is available from `iOS 14.2` and `macOS 10.15`.
+
 ---
 
 ## Setup System Extension
