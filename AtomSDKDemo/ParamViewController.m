@@ -117,13 +117,8 @@
     //Implement statusDidChangedHandler
     [self setupVPNSDKStateChangeManager];
     
-    if(appDelegate.isAutoGenerateUserCredential){
-        //Initialize with universally unique identifiers
-        self.shareInstance.UUID = appDelegate.uuid;
-    }else{
-        //Initialize with credential
-        self.shareInstance.atomCredential = [[AtomCredential alloc] initWithUsername:appDelegate.username password:appDelegate.userPassword];
-    }
+    //Initialize with credential
+    self.shareInstance.atomCredential = [[AtomCredential alloc] initWithUsername:appDelegate.username password:appDelegate.userPassword];
     
     //initialize with protocol
     AtomProtocol* protocolObj = [self getUserSelectedProtocolObject];//PROTOCOL
@@ -171,25 +166,16 @@
 
 - (BOOL)validateCredentials{
     [self.txtLogs setString: @""];
-    if(appDelegate.isAutoGenerateUserCredential){
-        if(appDelegate.uuid.length == 0){
-            [self showAlert:@"UUID is required for generating vpn credentials to connect VPN."];
-            return false;
-        }else if(countryArray.count == 0 && protocolArray.count == 0){
-            [self showAlert:@"Select a protocol and country to connect"];
-            return false;
-        }else return true;
-    }else{
-        if(appDelegate.username.length == 0){
-            [self showAlert:@"Username & Password is required for connecting VPN."];
-            return false;
-        }else if(appDelegate.userPassword.length == 0){
-            [self showAlert:@"Username & Password is required for connecting VPN."];
-            return false;
-        }else if(countryArray.count == 0 && protocolArray.count == 0){
-            [self showAlert:@"Select a protocol and country to connect"];
-            return false;
-        }
+    
+    if(appDelegate.username.length == 0){
+        [self showAlert:@"Username & Password is required for connecting VPN."];
+        return false;
+    }else if(appDelegate.userPassword.length == 0){
+        [self showAlert:@"Username & Password is required for connecting VPN."];
+        return false;
+    }else if(countryArray.count == 0 && protocolArray.count == 0){
+        [self showAlert:@"Select a protocol and country to connect"];
+        return false;
     }
     return true;
 }
