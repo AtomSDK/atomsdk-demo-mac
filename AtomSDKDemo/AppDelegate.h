@@ -12,9 +12,7 @@
 
 @property(nonatomic,strong) NSString* username;
 @property(nonatomic,strong) NSString* userPassword;
-@property(nonatomic,strong) NSString* uuid;
 @property(nonatomic,strong) NSString* secretKey;
-@property(nonatomic) BOOL isAutoGenerateUserCredential;
 
 
 @end

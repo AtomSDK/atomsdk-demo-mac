@@ -12,8 +12,6 @@
 @interface CredentialViewController()<NSTextFieldDelegate>{
     AppDelegate* appDelegate;
 }
-@property (weak) IBOutlet NSButton *autoGenerateUserCredential;
-@property (weak) IBOutlet NSTextField *txtUUID;
 @property (weak) IBOutlet NSTextField *txtUserName;
 @property (weak) IBOutlet NSTextField *txtPassword;
 
@@ -31,29 +29,6 @@
     [self.lblSecretKey setStringValue:appDelegate.secretKey];
     [self.txtUserName setDelegate:self];
     [self.txtPassword setDelegate:self];
-    [self.txtUUID setDelegate:self];
-}
-
-- (IBAction)autoGenerateUserCredential:(id)sender {
-    NSButton* btnUseOptimize = (NSButton*)sender;
-    
-    if(btnUseOptimize.state){
-        appDelegate.isAutoGenerateUserCredential = true;
-        [self.txtPassword setEnabled:NO];
-        [self.txtUserName setEnabled:NO];
-        [[self.txtUserName window] makeFirstResponder:nil];
-        [self.txtUUID setEnabled:YES];
-        [[self.view window] makeFirstResponder:[self txtUUID]];
-        
-    }else{
-        appDelegate.isAutoGenerateUserCredential = false;
-        [self.txtUUID setEnabled:NO];
-        [[self.txtUUID window] makeFirstResponder:nil];
-        [self.txtPassword setEnabled:YES];
-        [self.txtUserName setEnabled:YES];
-        [[self.view window] makeFirstResponder:[self txtUserName]];
-        
-    }
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -85,9 +60,6 @@
     } else if (textField.tag == 202) {
         //update password
         appDelegate.userPassword = textField.stringValue;
-    } else if (textField.tag == 203) {
-        //update uuid
-        appDelegate.uuid = textField.stringValue;
     }
     
 }
