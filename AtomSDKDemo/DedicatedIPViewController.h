@@ -16,7 +16,5 @@
 @property (weak) IBOutlet NSButton *vpnButton;
 @property (weak) IBOutlet NSTextField *txtDedicatedIP;
 @property (unsafe_unretained) IBOutlet NSTextView *txtLogs;
-@property (weak) IBOutlet NSTableView *tagsTableview;
-@property (nonatomic) NSArray *tagList;
 
 @end

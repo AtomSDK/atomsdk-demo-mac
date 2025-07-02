@@ -16,9 +16,7 @@
 		9A721AE3207B6CEC002F7220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD6207B6CEC002F7220 /* AppDelegate.m */; };
 		9A721AE4207B6CEC002F7220 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD8207B6CEC002F7220 /* InitialViewController.m */; };
 		9A721AE5207B6CEC002F7220 /* ParamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD9207B6CEC002F7220 /* ParamViewController.m */; };
-		9A721AE6207B6CEC002F7220 /* PSKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721ADA207B6CEC002F7220 /* PSKViewController.m */; };
 		9A721AEE207B7F23002F7220 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721AED207B7F23002F7220 /* NetworkExtension.framework */; };
-		BA6243A62390EFC90087E762 /* TagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6243A52390EFC90087E762 /* TagTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,20 +43,16 @@
 		9A721AD0207B6CEC002F7220 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		9A721AD1207B6CEC002F7220 /* CredentialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CredentialViewController.m; sourceTree = "<group>"; };
 		9A721AD3207B6CEC002F7220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9A721AD4207B6CEC002F7220 /* PSKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKViewController.h; sourceTree = "<group>"; };
 		9A721AD5207B6CEC002F7220 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A721AD6207B6CEC002F7220 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9A721AD7207B6CEC002F7220 /* DedicatedIPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DedicatedIPViewController.h; sourceTree = "<group>"; };
 		9A721AD8207B6CEC002F7220 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		9A721AD9207B6CEC002F7220 /* ParamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamViewController.m; sourceTree = "<group>"; };
-		9A721ADA207B6CEC002F7220 /* PSKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKViewController.m; sourceTree = "<group>"; };
 		9A721ADC207B6CEC002F7220 /* CredentialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredentialViewController.h; sourceTree = "<group>"; };
 		9A721AEB207B7EE0002F7220 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A721AED207B7F23002F7220 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		9A721AEF207B7F23002F7220 /* AtomSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AtomSDKDemo.entitlements; sourceTree = "<group>"; };
 		9B93BB9E1ED948B2C63C53DD /* Pods_AtomSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomSDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA6243A42390EFC90087E762 /* TagTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagTableViewCell.h; sourceTree = "<group>"; };
-		BA6243A52390EFC90087E762 /* TagTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,14 +118,10 @@
 				9A721ACC207B6CEC002F7220 /* DedicatedIPViewController.m */,
 				9A721ACE207B6CEC002F7220 /* ParamViewController.h */,
 				9A721AD9207B6CEC002F7220 /* ParamViewController.m */,
-				9A721AD4207B6CEC002F7220 /* PSKViewController.h */,
-				9A721ADA207B6CEC002F7220 /* PSKViewController.m */,
 				9A721AD2207B6CEC002F7220 /* Main.storyboard */,
 				9A721AD5207B6CEC002F7220 /* main.m */,
 				9A721AEB207B7EE0002F7220 /* Info.plist */,
 				9A721ACF207B6CEC002F7220 /* Assets.xcassets */,
-				BA6243A42390EFC90087E762 /* TagTableViewCell.h */,
-				BA6243A52390EFC90087E762 /* TagTableViewCell.m */,
 			);
 			path = AtomSDKDemo;
 			sourceTree = "<group>";
@@ -170,8 +160,8 @@
 				TargetAttributes = {
 					9A353B501F29EB0E0049A64F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 5YDUR67SED;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 4H849Z7V2K;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.VPNLite = {
 								enabled = 1;
@@ -219,8 +209,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo-frameworks.sh",
-				"${PODS_ROOT}/AtomCore/AtomCore-OSX/AtomCore.framework",
-				"${PODS_ROOT}/AtomSDKBySecure/AtomSDK-OSX/AtomSDK.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AtomCore/AtomCore.framework/AtomCore",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AtomSDKBySecure/AtomSDK.framework/AtomSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -264,8 +254,6 @@
 				9A721AE4207B6CEC002F7220 /* InitialViewController.m in Sources */,
 				9A721AE3207B6CEC002F7220 /* AppDelegate.m in Sources */,
 				9A721AE0207B6CEC002F7220 /* CredentialViewController.m in Sources */,
-				9A721AE6207B6CEC002F7220 /* PSKViewController.m in Sources */,
-				BA6243A62390EFC90087E762 /* TagTableViewCell.m in Sources */,
 				9A721AE2207B6CEC002F7220 /* main.m in Sources */,
 				9A721AE5207B6CEC002F7220 /* ParamViewController.m in Sources */,
 				9A721ADD207B6CEC002F7220 /* DedicatedIPViewController.m in Sources */,
@@ -379,9 +367,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AtomSDKDemo/AtomSDKDemo.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 5YDUR67SED;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4H849Z7V2K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AtomSDKDemo",
@@ -389,9 +380,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AtomSDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atom.vpn.demo.mac;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.public.macos.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "AtomSDK Demo Public macOS App";
 			};
 			name = Debug;
 		};
@@ -401,9 +393,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AtomSDKDemo/AtomSDKDemo.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 5YDUR67SED;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4H849Z7V2K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AtomSDKDemo",
@@ -411,9 +406,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AtomSDKDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atom.vpn.demo.mac;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.public.macos.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "AtomSDK Demo Public macOS App";
 			};
 			name = Release;
 		};
