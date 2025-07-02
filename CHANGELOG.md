@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Version 6.2.0
 
-#### Removed
+#### Updated
 - Deprecate unsupported dialing features.
 
 ### Version 6.1.0
