@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Version 6.2.0
 
 #### Updated
+- Update Mix-Panel Library To v5.0.8.
+
+### Version 6.2.0
+
+#### Updated
 - Deprecate unsupported dialing features.
 
 ### Version 6.1.0
