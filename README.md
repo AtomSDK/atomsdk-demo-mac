@@ -70,7 +70,7 @@ pod install
 
 **Swift Package Manager**
 
-Add the AtomSDKAnalytics package dependency (e.g. in Xcode: File → Add Packages..., then add the AtomSDKAnalytics repository). Ensure AtomSDK and AtomCore are already added as required by AtomSDKAnalytics.
+Add the AtomSDKAnalytics package dependency (e.g. in Xcode: File → Add Packages..., then add the AtomSDKAnalytics repository with URL: "https://bitbucket.org/purevpn/atomsdkanalytics/src/main/"). Ensure AtomSDK and AtomCore are already added as required by AtomSDKAnalytics.
 
 #### Integration Steps for Resellers
 
@@ -884,6 +884,7 @@ While in debug it should be the following
 		<string>packet-tunnel-provider</string>
 	</array>
 ```
+
 
 
 
