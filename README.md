@@ -87,7 +87,7 @@ Once AtomSDKAnalytics is linked to your app, AtomSDK will use it automatically. 
 
 | Scenario | Podfile / Dependencies | Result |
 |--------|-------------------------|--------|
-| Reseller wants analytics | `pod 'AtomSDK'` (or AtomSDKBySecure) + `pod 'AtomSDKTunnel'` + `pod 'AtomSDKAnalytics'` | Events sent to third-party analytics. |
+| Reseller wants analytics | `pod 'AtomSDKBySecure'` + `pod 'AtomSDKTunnel'` + `pod 'AtomSDKAnalytics'` | Events sent to third-party analytics. |
 | Reseller does not want analytics | Only `pod 'AtomSDK'` + `pod 'AtomSDKTunnel'` (no AtomSDKAnalytics) | Events silently ignored; no errors. |
 
 #### Requirements (when using AtomSDKAnalytics)
@@ -884,5 +884,6 @@ While in debug it should be the following
 		<string>packet-tunnel-provider</string>
 	</array>
 ```
+
 
 
