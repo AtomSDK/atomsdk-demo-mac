@@ -1,6 +1,46 @@
 # ATOM VPN SDK demo for macOS Applications
 This is a demo application for macOS Applications with basic usage of ATOM VPN SDK which will help the developers to create smooth applications over ATOM SDK quickly.
 
+## Table of Contents
+
+- [SDK Features covered in this Demo](#sdk-features-covered-in-this-demo)
+- [Compatibility](#compatibility)
+- [Supported Protocols](#supported-protocols)
+- [SDK Installation](#sdk-installation)
+  - [CocoaPods](#cocoapods)
+  - [Integrate AtomWireguardTunnel in iOS App for Wireguard Protocol](#integrate-atomwireguardtunnel-in-ios-app-for-wireguard-protocol)
+  - [Integrate AtomSDKAnalytics](#integrate-atomsdkanalytics)
+- [Getting Started with the Code](#getting-started-with-the-code)
+- [Enable Local Inventory Support](#enable-local-inventory-support)
+- [Delegates to Register](#delegates-to-register)
+- [StateDidChangedHandler to monitor a VPN connection status](#statedidchangedhandler-to-monitor-a-vpn-connection-status)
+- [VPN Authentication](#vpn-authentication)
+- [VPN Connection](#vpn-connection)
+- [Fetch Countries](#fetch-countries)
+- [Fetch Recommended Country](#fetch-recommended-country)
+- [Fetch Countries For Smart Dialing](#fetch-countries-for-smart-dialing)
+- [Fetch Protocols](#fetch-protocols)
+- [VPN Connection Speed](#vpn-connection-speed)
+- [Protocol switch](#protocol-switch)
+- [Recommended protocol](#recommended-protocol)
+- [Use Failover](#use-failover)
+- [How to Connect](#how-to-connect)
+  - [Connection with Parameters](#connection-with-parameters)
+  - [Include or Exclude Server with Nas Identifier](#include-or-exclude-server-with-nas-identifier)
+  - [Connection with Dedicated IP](#connection-with-dedicated-ip)
+  - [Connection with Real-time Optimized Servers](#connection-with-real-time-optimized-servers)
+  - [Connection with Smart Dialing](#connection-with-smart-dialing)
+  - [Connection with Multiple Protocols (Auto-Retry Functionality)](#connection-with-multiple-protocols-auto-retry-functionality)
+  - [Connection with On Demand Custom Rules](#connection-with-on-demand-custom-rules)
+- [Cancel VPN Connection](#cancel-vpn-connection)
+- [Disconnect VPN Connection](#disconnect-vpn-connection)
+- [Remove VPN Profile](#remove-vpn-profile)
+- [Pause / Resume VPN Connection](#pause--resume-vpn-connection)
+- [Tracker / Ad Blocker](#tracker--ad-blocker)
+- [LAN Access Feature](#lan-access-feature)
+- [Setup System Extension](#setup-system-extension)
+- [Releasing App](#releasing-app)
+
 ## SDK Features covered in this Demo
 * Connection with Parameters
 * Connection with Dedicated IP
@@ -210,8 +250,8 @@ or
 properties.enableProtocolSwitch = true;
 ```
 
-## Recommanded protocol
-If you didn't specify the protocol in case of Country, City and Channel dailing then Atom SDK dialed with recommanded protocol according to the specified country, city and channel. It will not work for dedicated IP.
+## Recommended protocol
+If you didn't specify the protocol in case of Country, City and Channel dailing then Atom SDK dialed with recommended protocol according to the specified country, city and channel. It will not work for dedicated IP.
 
 ## Use Failover
 Failover is a mechanism in which Atom dialed with nearest server if requested server is busy or not found for any reason. You can control this mechanism from VPNPorperties class. By default its value is set to true.
