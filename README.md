@@ -50,7 +50,7 @@ This is a demo application for macOS Applications with basic usage of ATOM VPN S
 
 
 ## Compatibility
-* Compatible with Xcode 15.3, macOS 10.13 and later
+* Compatible with Xcode 15.3, macOS 10.15 and later
 * Compatible with ATOM SDK Version 5.0 and onwards
 
 
