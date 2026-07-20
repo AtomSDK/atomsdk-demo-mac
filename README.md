@@ -632,7 +632,7 @@ The VPN Pause feature in the Atom SDK offers flexible control over VPN connectio
 
 ---
 
-## Tracker / Ad Blocker
+## Tracker And Ad Blocker
 This section provides details about the Tracker and Ad Blocker feature in the Atom VPN SDK. This feature enables VPN applications built with the Atom SDK to block tracking scripts and advertisements, enhancing both privacy and performance.
 
 ### About This Feature
