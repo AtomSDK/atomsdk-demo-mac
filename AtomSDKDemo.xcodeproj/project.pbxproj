@@ -3,11 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		268339CC7ABFF08CA5E1A3E3 /* Pods_AtomSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B93BB9E1ED948B2C63C53DD /* Pods_AtomSDKDemo.framework */; };
+		306AEAB23013C0B7008F414D /* AtomSDKAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEAB13013C0B7008F414D /* AtomSDKAnalytics */; };
+		306AEAB53013C0F9008F414D /* AtomSDKBySecure in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEAB43013C0F9008F414D /* AtomSDKBySecure */; };
+		306AEAB83013C170008F414D /* AtomSDKTunnel in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEAB73013C170008F414D /* AtomSDKTunnel */; };
+		306AEABB3013C18D008F414D /* AtomWireguardTunnel in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEABA3013C18D008F414D /* AtomWireguardTunnel */; };
 		9A721ADD207B6CEC002F7220 /* DedicatedIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721ACC207B6CEC002F7220 /* DedicatedIPViewController.m */; };
 		9A721ADF207B6CEC002F7220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A721ACF207B6CEC002F7220 /* Assets.xcassets */; };
 		9A721AE0207B6CEC002F7220 /* CredentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD1207B6CEC002F7220 /* CredentialViewController.m */; };
@@ -62,7 +66,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				306AEABB3013C18D008F414D /* AtomWireguardTunnel in Frameworks */,
+				306AEAB53013C0F9008F414D /* AtomSDKBySecure in Frameworks */,
 				9A721AEE207B7F23002F7220 /* NetworkExtension.framework in Frameworks */,
+				306AEAB83013C170008F414D /* AtomSDKTunnel in Frameworks */,
+				306AEAB23013C0B7008F414D /* AtomSDKAnalytics in Frameworks */,
 				268339CC7ABFF08CA5E1A3E3 /* Pods_AtomSDKDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,7 +150,6 @@
 				9A353B4E1F29EB0E0049A64F /* Frameworks */,
 				9A353B4F1F29EB0E0049A64F /* Resources */,
 				9A353B6C1F29EB620049A64F /* Embed Frameworks */,
-				EC922ED7DF6DF2C4A26B2B20 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +191,12 @@
 				Base,
 			);
 			mainGroup = 9A353B481F29EB0E0049A64F;
+			packageReferences = (
+				306AEAB03013C0B7008F414D /* XCRemoteSwiftPackageReference "atomsdkanalytics" */,
+				306AEAB33013C0F9008F414D /* XCRemoteSwiftPackageReference "atomsdkbysecure" */,
+				306AEAB63013C170008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */,
+				306AEAB93013C18D008F414D /* XCRemoteSwiftPackageReference "AtomWireguardTunnel" */,
+			);
 			productRefGroup = 9A353B521F29EB0E0049A64F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -206,30 +219,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		EC922ED7DF6DF2C4A26B2B20 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AtomSDKAnalytics/AtomSDKAnalytics.framework",
-				"${BUILT_PRODUCTS_DIR}/Mixpanel-swift/Mixpanel.framework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AtomCore/AtomCore.framework/AtomCore",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AtomSDKBySecure/AtomSDK.framework/AtomSDK",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AtomSDKAnalytics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AtomCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AtomSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F8B0B5A92565DBA300845FD9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,7 +375,10 @@
 					"$(PROJECT_DIR)/AtomSDKDemo",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AtomSDKDemo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.public.macos.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,7 +404,10 @@
 					"$(PROJECT_DIR)/AtomSDKDemo",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AtomSDKDemo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.public.macos.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +438,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		306AEAB03013C0B7008F414D /* XCRemoteSwiftPackageReference "atomsdkanalytics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://bitbucket.org/purevpn/atomsdkanalytics";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+		306AEAB33013C0F9008F414D /* XCRemoteSwiftPackageReference "atomsdkbysecure" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://bitbucket.org/purevpn/atomsdkbysecure";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.11.0;
+			};
+		};
+		306AEAB63013C170008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://bitbucket.org/purevpn/atomsdktunnel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.0;
+			};
+		};
+		306AEAB93013C18D008F414D /* XCRemoteSwiftPackageReference "AtomWireguardTunnel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AtomSDK/AtomWireguardTunnel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		306AEAB13013C0B7008F414D /* AtomSDKAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 306AEAB03013C0B7008F414D /* XCRemoteSwiftPackageReference "atomsdkanalytics" */;
+			productName = AtomSDKAnalytics;
+		};
+		306AEAB43013C0F9008F414D /* AtomSDKBySecure */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 306AEAB33013C0F9008F414D /* XCRemoteSwiftPackageReference "atomsdkbysecure" */;
+			productName = AtomSDKBySecure;
+		};
+		306AEAB73013C170008F414D /* AtomSDKTunnel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 306AEAB63013C170008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */;
+			productName = AtomSDKTunnel;
+		};
+		306AEABA3013C18D008F414D /* AtomWireguardTunnel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 306AEAB93013C18D008F414D /* XCRemoteSwiftPackageReference "AtomWireguardTunnel" */;
+			productName = AtomWireguardTunnel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9A353B491F29EB0E0049A64F /* Project object */;
 }

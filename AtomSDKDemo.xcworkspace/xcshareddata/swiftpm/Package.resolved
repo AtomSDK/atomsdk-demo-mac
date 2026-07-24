@@ -1,0 +1,69 @@
+{
+  "originHash" : "7a6c0d2b2c740a86ec9b77fded6333ca6fa5d6ed74ae703a20712d9cce1708c8",
+  "pins" : [
+    {
+      "identity" : "atomcore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://bitbucket.org/purevpn/atomcore",
+      "state" : {
+        "revision" : "d7b367fe504233aa2e2d14858817518dd23fed7e",
+        "version" : "2.4.0"
+      }
+    },
+    {
+      "identity" : "atomsdkanalytics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://bitbucket.org/purevpn/atomsdkanalytics",
+      "state" : {
+        "revision" : "ceb9d901975a275b006af2842a969b074a90adf0",
+        "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "atomsdkbysecure",
+      "kind" : "remoteSourceControl",
+      "location" : "https://bitbucket.org/purevpn/atomsdkbysecure",
+      "state" : {
+        "revision" : "1e4bc9561c54d948d7811f76a4e1739c9e0cf389",
+        "version" : "6.12.0"
+      }
+    },
+    {
+      "identity" : "atomsdktunnel",
+      "kind" : "remoteSourceControl",
+      "location" : "https://bitbucket.org/purevpn/atomsdktunnel",
+      "state" : {
+        "revision" : "0e21a52998a01d63e16f313ddf78a2351d7dd3a9",
+        "version" : "4.3.0"
+      }
+    },
+    {
+      "identity" : "atomwireguardtunnel",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AtomSDK/AtomWireguardTunnel",
+      "state" : {
+        "revision" : "8c1755f9756f85e122ce0daee779b33d8421333e",
+        "version" : "2.3.0"
+      }
+    },
+    {
+      "identity" : "mixpanel-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mixpanel/mixpanel-swift.git",
+      "state" : {
+        "revision" : "5f3020832a9594d98c129bf010a2bcc9dc4fa959",
+        "version" : "5.2.0"
+      }
+    },
+    {
+      "identity" : "wireguard-apple",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AtomSDK/wireguard-apple",
+      "state" : {
+        "revision" : "106698090f9d1edee8d4f3f3689d18539fcdbf15",
+        "version" : "3.2.0"
+      }
+    }
+  ],
+  "version" : 3
+}
