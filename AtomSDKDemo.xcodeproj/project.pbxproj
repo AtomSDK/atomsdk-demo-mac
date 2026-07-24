@@ -33,6 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		307CD8A43012106600B4DBE4 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		307CD8A53012106600B4DBE4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6C5105DECB6106DB41521022 /* Pods-AtomSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		71F68719D2DCF1A69FAFE256 /* Pods-AtomSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKDemo.release.xcconfig"; path = "Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9A353B511F29EB0E0049A64F /* AtomSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtomSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,10 +82,12 @@
 		9A353B481F29EB0E0049A64F = {
 			isa = PBXGroup;
 			children = (
+				307CD8A43012106600B4DBE4 /* CHANGELOG.md */,
+				307CD8A53012106600B4DBE4 /* README.md */,
 				9A721ACA207B6CEC002F7220 /* AtomSDKDemo */,
-				9A353B521F29EB0E0049A64F /* Products */,
 				9A353B6D1F29EC110049A64F /* Frameworks */,
 				025E033E748BC408613F7905 /* Pods */,
+				9A353B521F29EB0E0049A64F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
