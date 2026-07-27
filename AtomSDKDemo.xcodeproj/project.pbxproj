@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		268339CC7ABFF08CA5E1A3E3 /* Pods_AtomSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B93BB9E1ED948B2C63C53DD /* Pods_AtomSDKDemo.framework */; };
 		306AEAB23013C0B7008F414D /* AtomSDKAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEAB13013C0B7008F414D /* AtomSDKAnalytics */; };
 		306AEAB53013C0F9008F414D /* AtomSDKBySecure in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEAB43013C0F9008F414D /* AtomSDKBySecure */; };
+		306AEAFA30177DAF008F414D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721AED207B7F23002F7220 /* NetworkExtension.framework */; };
+		306AEB0430177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 306AEAF930177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		306AEB0C30178393008F414D /* AtomSDKTunnel in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEB0B30178393008F414D /* AtomSDKTunnel */; };
 		9A721ADD207B6CEC002F7220 /* DedicatedIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721ACC207B6CEC002F7220 /* DedicatedIPViewController.m */; };
 		9A721ADF207B6CEC002F7220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A721ACF207B6CEC002F7220 /* Assets.xcassets */; };
 		9A721AE0207B6CEC002F7220 /* CredentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD1207B6CEC002F7220 /* CredentialViewController.m */; };
@@ -21,7 +24,28 @@
 		9A721AEE207B7F23002F7220 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721AED207B7F23002F7220 /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		306AEB0230177DAF008F414D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A353B491F29EB0E0049A64F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 306AEAF830177DAF008F414D;
+			remoteInfo = PacketTunnelOpenVPNMac;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		306AEB0930177DAF008F414D /* Embed System Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				306AEB0430177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension in Embed System Extensions */,
+			);
+			name = "Embed System Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A353B6C1F29EB620049A64F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -35,6 +59,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		306AEAF930177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.atom.demo.public.macos.packettunnelopenvpn.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		307CD8A43012106600B4DBE4 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		307CD8A53012106600B4DBE4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6C5105DECB6106DB41521022 /* Pods-AtomSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -59,7 +84,30 @@
 		9B93BB9E1ED948B2C63C53DD /* Pods_AtomSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomSDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		306AEB0530177DAF008F414D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 306AEAF830177DAF008F414D /* PacketTunnelOpenVPNMac */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		306AEAFB30177DAF008F414D /* PacketTunnelOpenVPNMac */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (306AEB0530177DAF008F414D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = PacketTunnelOpenVPNMac; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		306AEAF630177DAF008F414D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				306AEB0C30178393008F414D /* AtomSDKTunnel in Frameworks */,
+				306AEAFA30177DAF008F414D /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A353B4E1F29EB0E0049A64F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,6 +137,7 @@
 				307CD8A43012106600B4DBE4 /* CHANGELOG.md */,
 				307CD8A53012106600B4DBE4 /* README.md */,
 				9A721ACA207B6CEC002F7220 /* AtomSDKDemo */,
+				306AEAFB30177DAF008F414D /* PacketTunnelOpenVPNMac */,
 				9A353B6D1F29EC110049A64F /* Frameworks */,
 				025E033E748BC408613F7905 /* Pods */,
 				9A353B521F29EB0E0049A64F /* Products */,
@@ -99,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				9A353B511F29EB0E0049A64F /* AtomSDKDemo.app */,
+				306AEAF930177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +187,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		306AEAF830177DAF008F414D /* PacketTunnelOpenVPNMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 306AEB0630177DAF008F414D /* Build configuration list for PBXNativeTarget "PacketTunnelOpenVPNMac" */;
+			buildPhases = (
+				306AEAF530177DAF008F414D /* Sources */,
+				306AEAF630177DAF008F414D /* Frameworks */,
+				306AEAF730177DAF008F414D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				306AEAFB30177DAF008F414D /* PacketTunnelOpenVPNMac */,
+			);
+			name = PacketTunnelOpenVPNMac;
+			packageProductDependencies = (
+				306AEB0B30178393008F414D /* AtomSDKTunnel */,
+			);
+			productName = PacketTunnelOpenVPNMac;
+			productReference = 306AEAF930177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension */;
+			productType = "com.apple.product-type.system-extension";
+		};
 		9A353B501F29EB0E0049A64F /* AtomSDKDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A353B651F29EB0E0049A64F /* Build configuration list for PBXNativeTarget "AtomSDKDemo" */;
@@ -146,10 +219,12 @@
 				9A353B4E1F29EB0E0049A64F /* Frameworks */,
 				9A353B4F1F29EB0E0049A64F /* Resources */,
 				9A353B6C1F29EB620049A64F /* Embed Frameworks */,
+				306AEB0930177DAF008F414D /* Embed System Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				306AEB0330177DAF008F414D /* PBXTargetDependency */,
 			);
 			name = AtomSDKDemo;
 			productName = PureVPNSDKSample;
@@ -162,9 +237,13 @@
 		9A353B491F29EB0E0049A64F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 2660;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = PureVPN;
 				TargetAttributes = {
+					306AEAF830177DAF008F414D = {
+						CreatedOnToolsVersion = 26.6;
+					};
 					9A353B501F29EB0E0049A64F = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4H849Z7V2K;
@@ -190,17 +269,26 @@
 			packageReferences = (
 				306AEAB03013C0B7008F414D /* XCRemoteSwiftPackageReference "atomsdkanalytics" */,
 				306AEAB33013C0F9008F414D /* XCRemoteSwiftPackageReference "atomsdkbysecure" */,
+				306AEB0A30178393008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */,
 			);
 			productRefGroup = 9A353B521F29EB0E0049A64F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				9A353B501F29EB0E0049A64F /* AtomSDKDemo */,
+				306AEAF830177DAF008F414D /* PacketTunnelOpenVPNMac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		306AEAF730177DAF008F414D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A353B4F1F29EB0E0049A64F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,6 +326,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		306AEAF530177DAF008F414D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A353B4D1F29EB0E0049A64F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +348,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		306AEB0330177DAF008F414D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 306AEAF830177DAF008F414D /* PacketTunnelOpenVPNMac */;
+			targetProxy = 306AEB0230177DAF008F414D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		9A721AD2207B6CEC002F7220 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -265,6 +368,142 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		306AEB0730177DAF008F414D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = PacketTunnelOpenVPNMac/PacketTunnelOpenVPNMac.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4H849Z7V2K;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacketTunnelOpenVPNMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnelOpenVPNMac;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 PureVPN. All rights reserved.";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = SYSTEM_EXTENSION_USAGE_DESCRIPTION;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.public.macos.packettunnelopenvpn;
+				PRODUCT_NAME = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "AtomSDK Demo Public macOS App PT OpenVPN";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		306AEB0830177DAF008F414D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = PacketTunnelOpenVPNMac/PacketTunnelOpenVPNMac.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4H849Z7V2K;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacketTunnelOpenVPNMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnelOpenVPNMac;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 PureVPN. All rights reserved.";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = SYSTEM_EXTENSION_USAGE_DESCRIPTION;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.public.macos.packettunnelopenvpn;
+				PRODUCT_NAME = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "AtomSDK Demo Public macOS App PT OpenVPN";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		9A353B631F29EB0E0049A64F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -365,20 +604,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4H849Z7V2K;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = NO;
-				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
-				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
-				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
 				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
 				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
 				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
 				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
 				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
-				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
-				ENABLE_RESOURCE_ACCESS_USB = NO;
-				ENABLE_USER_SELECTED_FILES = readonly;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AtomSDKDemo",
@@ -416,20 +649,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4H849Z7V2K;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = NO;
-				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
-				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
-				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
 				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
 				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
 				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
 				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
 				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
-				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
-				ENABLE_RESOURCE_ACCESS_USB = NO;
-				ENABLE_USER_SELECTED_FILES = readonly;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AtomSDKDemo",
@@ -457,6 +684,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		306AEB0630177DAF008F414D /* Build configuration list for PBXNativeTarget "PacketTunnelOpenVPNMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				306AEB0730177DAF008F414D /* Debug */,
+				306AEB0830177DAF008F414D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9A353B4C1F29EB0E0049A64F /* Build configuration list for PBXProject "AtomSDKDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -494,6 +730,14 @@
 				minimumVersion = 6.11.0;
 			};
 		};
+		306AEB0A30178393008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://bitbucket.org/purevpn/atomsdktunnel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -506,6 +750,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 306AEAB33013C0F9008F414D /* XCRemoteSwiftPackageReference "atomsdkbysecure" */;
 			productName = AtomSDKBySecure;
+		};
+		306AEB0B30178393008F414D /* AtomSDKTunnel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 306AEB0A30178393008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */;
+			productName = AtomSDKTunnel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

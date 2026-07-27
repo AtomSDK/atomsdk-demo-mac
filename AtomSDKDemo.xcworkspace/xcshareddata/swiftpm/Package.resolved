@@ -1,5 +1,5 @@
 {
-  "originHash" : "9cc667df7cf3735dd3b494acd83f8b90c49e32227d8d2240f4028afc199841b2",
+  "originHash" : "86ebc90664a6dd71d38d27c7c07c00dce0942e93cde3bd60cca9fed351171db1",
   "pins" : [
     {
       "identity" : "atomcore",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "1e4bc9561c54d948d7811f76a4e1739c9e0cf389",
         "version" : "6.12.0"
+      }
+    },
+    {
+      "identity" : "atomsdktunnel",
+      "kind" : "remoteSourceControl",
+      "location" : "https://bitbucket.org/purevpn/atomsdktunnel",
+      "state" : {
+        "revision" : "0e21a52998a01d63e16f313ddf78a2351d7dd3a9",
+        "version" : "4.3.0"
       }
     },
     {
