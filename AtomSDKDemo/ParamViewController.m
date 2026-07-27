@@ -198,6 +198,21 @@
 - (void)atomManagerDialErrorReceived:(NSError *)error withConnectionDetails:(AtomConnectionDetails *)atomConnectionDetails{
     //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
+
+- (void)atomManagerDidConnecting:(AtomConnectionDetails * _Nullable)atomConnectionDetails { 
+    //
+}
+
+
+- (void)atomManagerDidInitialized:(AtomManager * _Nonnull)sharedInstance { 
+    //
+}
+
+
+- (void)atomManagerDidPaused:(AtomConnectionDetails * _Nullable)atomConnectionDetails { 
+    //
+}
+
 #pragma mark statusDidChangedHandler
 - (void)setupVPNSDKStateChangeManager {
     
@@ -288,7 +303,7 @@
 - (void)getOptimizCountries:(id)sender {
     [[AtomManager sharedInstance] getOptimizedCountriesWithSuccess:^(NSArray<AtomCountry *> *success) {
         for(int i =0; i<[success count];i++){
-            AtomCountry * obj = [success objectAtIndex:i];
+            //AtomCountry * obj = [success objectAtIndex:i];
             //NSLog(@"%lu %d",(unsigned long)[obj.protocols count],obj.latency);
         }
     } errorBlock:^(NSError *error) {
@@ -384,7 +399,7 @@
 }
 
 - (void)loadCountryInComboBox:(NSArray*)countryObjects{
-   NSMutableArray *countryTitleArray = [NSMutableArray new];
+    NSMutableArray *countryTitleArray = [NSMutableArray new];
     for(int i =0; i<[countryObjects count];i++){
         AtomCountry * obj = [countryObjects objectAtIndex:i];
         [countryTitleArray addObject:obj.name];
@@ -397,7 +412,7 @@
 }
 
 - (void)loadCityInComboBox:(NSArray*) cityObjects {
-   NSMutableArray *cityTitleArray = [NSMutableArray new];
+    NSMutableArray *cityTitleArray = [NSMutableArray new];
     for(int i =0; i<[cityObjects count];i++){
         AtomCity * obj = [cityObjects objectAtIndex:i];
         [cityTitleArray addObject:obj.name];
@@ -410,7 +425,7 @@
 }
 
 - (void)loadChannelInComboBox:(NSArray*) channelObjects {
-   NSMutableArray *channelTitleArray = [NSMutableArray new];
+    NSMutableArray *channelTitleArray = [NSMutableArray new];
     for(int i =0; i<[channelObjects count];i++){
         AtomChannel * obj = [channelObjects objectAtIndex:i];
         [channelTitleArray addObject:obj.name];

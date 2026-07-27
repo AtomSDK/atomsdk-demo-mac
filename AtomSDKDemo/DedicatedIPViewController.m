@@ -134,8 +134,8 @@
 - (void)atomManagerDidConnect{
     //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
-- (void)atomManagerDidDisconnect:(BOOL)manuallyDisconnected{
-      //NSLog(@"%s",__PRETTY_FUNCTION__);
+- (void)atomManagerDidDisconnect:(AtomConnectionDetails *)atomConnectionDetails {
+    //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 - (void)atomManagerOnRedialing:(AtomConnectionDetails *)atomConnectionDetails withError:(NSError *)error{
     //NSLog(@"%s",__PRETTY_FUNCTION__);
@@ -143,6 +143,26 @@
 - (void)atomManagerDialErrorReceived:(NSError *)error withConnectionDetails:(AtomConnectionDetails *)atomConnectionDetails{
       //NSLog(@"%s",__PRETTY_FUNCTION__);
 }
+
+- (void)atomManagerDidConnect:(AtomConnectionDetails * _Nullable)atomConnectionDetails { 
+    //
+}
+
+
+- (void)atomManagerDidConnecting:(AtomConnectionDetails * _Nullable)atomConnectionDetails { 
+    //
+}
+
+
+- (void)atomManagerDidInitialized:(AtomManager * _Nonnull)sharedInstance { 
+    //
+}
+
+
+- (void)atomManagerDidPaused:(AtomConnectionDetails * _Nullable)atomConnectionDetails { 
+    //
+}
+
 
 #pragma mark statusDidChangedHandler
 - (void)setupVPNSDKStateChangeManager {
@@ -157,11 +177,11 @@
                 [self.vpnButton setTitle:ButtonTitleConnect];
                 break;
             case AtomStatusConnected:
-               [strStatus setString:@"AtomStatusConnected"];
+                [strStatus setString:@"AtomStatusConnected"];
                 [self.vpnButton setTitle:ButtonTitleDisconnect];
                 break;
             case AtomStatusDisconnected:
-               [strStatus setString:@"AtomStatusDisconnected"];
+                [strStatus setString:@"AtomStatusDisconnected"];
                 [self.vpnButton setTitle:ButtonTitleConnect];
                 break;
             case AtomStatusConnecting:

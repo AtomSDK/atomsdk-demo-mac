@@ -10,8 +10,6 @@
 		268339CC7ABFF08CA5E1A3E3 /* Pods_AtomSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B93BB9E1ED948B2C63C53DD /* Pods_AtomSDKDemo.framework */; };
 		306AEAB23013C0B7008F414D /* AtomSDKAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEAB13013C0B7008F414D /* AtomSDKAnalytics */; };
 		306AEAB53013C0F9008F414D /* AtomSDKBySecure in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEAB43013C0F9008F414D /* AtomSDKBySecure */; };
-		306AEAB83013C170008F414D /* AtomSDKTunnel in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEAB73013C170008F414D /* AtomSDKTunnel */; };
-		306AEABB3013C18D008F414D /* AtomWireguardTunnel in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEABA3013C18D008F414D /* AtomWireguardTunnel */; };
 		9A721ADD207B6CEC002F7220 /* DedicatedIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721ACC207B6CEC002F7220 /* DedicatedIPViewController.m */; };
 		9A721ADF207B6CEC002F7220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A721ACF207B6CEC002F7220 /* Assets.xcassets */; };
 		9A721AE0207B6CEC002F7220 /* CredentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD1207B6CEC002F7220 /* CredentialViewController.m */; };
@@ -66,10 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				306AEABB3013C18D008F414D /* AtomWireguardTunnel in Frameworks */,
 				306AEAB53013C0F9008F414D /* AtomSDKBySecure in Frameworks */,
 				9A721AEE207B7F23002F7220 /* NetworkExtension.framework in Frameworks */,
-				306AEAB83013C170008F414D /* AtomSDKTunnel in Frameworks */,
 				306AEAB23013C0B7008F414D /* AtomSDKAnalytics in Frameworks */,
 				268339CC7ABFF08CA5E1A3E3 /* Pods_AtomSDKDemo.framework in Frameworks */,
 			);
@@ -194,8 +190,6 @@
 			packageReferences = (
 				306AEAB03013C0B7008F414D /* XCRemoteSwiftPackageReference "atomsdkanalytics" */,
 				306AEAB33013C0F9008F414D /* XCRemoteSwiftPackageReference "atomsdkbysecure" */,
-				306AEAB63013C170008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */,
-				306AEAB93013C18D008F414D /* XCRemoteSwiftPackageReference "AtomWireguardTunnel" */,
 			);
 			productRefGroup = 9A353B521F29EB0E0049A64F /* Products */;
 			projectDirPath = "";
@@ -363,13 +357,28 @@
 			baseConfigurationReference = 6C5105DECB6106DB41521022 /* Pods-AtomSDKDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				AUTOMATION_APPLE_EVENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = AtomSDKDemo/AtomSDKDemo.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4H849Z7V2K;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AtomSDKDemo",
@@ -384,6 +393,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "AtomSDK Demo Public macOS App";
+				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
 			};
 			name = Debug;
 		};
@@ -392,13 +408,28 @@
 			baseConfigurationReference = 71F68719D2DCF1A69FAFE256 /* Pods-AtomSDKDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				AUTOMATION_APPLE_EVENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = AtomSDKDemo/AtomSDKDemo.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4H849Z7V2K;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AtomSDKDemo",
@@ -413,6 +444,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "AtomSDK Demo Public macOS App";
+				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
 			};
 			name = Release;
 		};
@@ -456,22 +494,6 @@
 				minimumVersion = 6.11.0;
 			};
 		};
-		306AEAB63013C170008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://bitbucket.org/purevpn/atomsdktunnel";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.3.0;
-			};
-		};
-		306AEAB93013C18D008F414D /* XCRemoteSwiftPackageReference "AtomWireguardTunnel" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AtomSDK/AtomWireguardTunnel";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -484,16 +506,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 306AEAB33013C0F9008F414D /* XCRemoteSwiftPackageReference "atomsdkbysecure" */;
 			productName = AtomSDKBySecure;
-		};
-		306AEAB73013C170008F414D /* AtomSDKTunnel */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 306AEAB63013C170008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */;
-			productName = AtomSDKTunnel;
-		};
-		306AEABA3013C18D008F414D /* AtomWireguardTunnel */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 306AEAB93013C18D008F414D /* XCRemoteSwiftPackageReference "AtomWireguardTunnel" */;
-			productName = AtomWireguardTunnel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
