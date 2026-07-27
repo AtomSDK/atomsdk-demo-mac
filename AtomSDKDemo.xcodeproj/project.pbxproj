@@ -13,6 +13,9 @@
 		306AEAFA30177DAF008F414D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721AED207B7F23002F7220 /* NetworkExtension.framework */; };
 		306AEB0430177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 306AEAF930177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		306AEB0C30178393008F414D /* AtomSDKTunnel in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEB0B30178393008F414D /* AtomSDKTunnel */; };
+		306AEBEB3017A851008F414D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A721AED207B7F23002F7220 /* NetworkExtension.framework */; };
+		306AEBF53017A851008F414D /* com.atom.demo.public.macos.packettunnelwireguard.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 306AEBEA3017A851008F414D /* com.atom.demo.public.macos.packettunnelwireguard.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		306AEBFC3017ACA6008F414D /* AtomWireguardTunnel in Frameworks */ = {isa = PBXBuildFile; productRef = 306AEBFB3017ACA6008F414D /* AtomWireguardTunnel */; };
 		9A721ADD207B6CEC002F7220 /* DedicatedIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721ACC207B6CEC002F7220 /* DedicatedIPViewController.m */; };
 		9A721ADF207B6CEC002F7220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A721ACF207B6CEC002F7220 /* Assets.xcassets */; };
 		9A721AE0207B6CEC002F7220 /* CredentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721AD1207B6CEC002F7220 /* CredentialViewController.m */; };
@@ -32,6 +35,20 @@
 			remoteGlobalIDString = 306AEAF830177DAF008F414D;
 			remoteInfo = PacketTunnelOpenVPNMac;
 		};
+		306AEBF33017A851008F414D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A353B491F29EB0E0049A64F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 306AEBE93017A851008F414D;
+			remoteInfo = PacketTunnelWireGuardMac;
+		};
+		306AEC013017ACFA008F414D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A353B491F29EB0E0049A64F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 306AEBFD3017ACE8008F414D;
+			remoteInfo = AtomWireGuardGoBridgemacOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +58,7 @@
 			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
+				306AEBF53017A851008F414D /* com.atom.demo.public.macos.packettunnelwireguard.systemextension in Embed System Extensions */,
 				306AEB0430177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension in Embed System Extensions */,
 			);
 			name = "Embed System Extensions";
@@ -60,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		306AEAF930177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.atom.demo.public.macos.packettunnelopenvpn.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		306AEBEA3017A851008F414D /* com.atom.demo.public.macos.packettunnelwireguard.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.atom.demo.public.macos.packettunnelwireguard.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		307CD8A43012106600B4DBE4 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		307CD8A53012106600B4DBE4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6C5105DECB6106DB41521022 /* Pods-AtomSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-AtomSDKDemo/Pods-AtomSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,10 +111,18 @@
 			);
 			target = 306AEAF830177DAF008F414D /* PacketTunnelOpenVPNMac */;
 		};
+		306AEBF63017A851008F414D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 306AEBE93017A851008F414D /* PacketTunnelWireGuardMac */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		306AEAFB30177DAF008F414D /* PacketTunnelOpenVPNMac */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (306AEB0530177DAF008F414D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = PacketTunnelOpenVPNMac; sourceTree = "<group>"; };
+		306AEBEC3017A851008F414D /* PacketTunnelWireGuardMac */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (306AEBF63017A851008F414D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = PacketTunnelWireGuardMac; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +132,15 @@
 			files = (
 				306AEB0C30178393008F414D /* AtomSDKTunnel in Frameworks */,
 				306AEAFA30177DAF008F414D /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		306AEBE73017A851008F414D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				306AEBFC3017ACA6008F414D /* AtomWireguardTunnel in Frameworks */,
+				306AEBEB3017A851008F414D /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +174,7 @@
 				307CD8A53012106600B4DBE4 /* README.md */,
 				9A721ACA207B6CEC002F7220 /* AtomSDKDemo */,
 				306AEAFB30177DAF008F414D /* PacketTunnelOpenVPNMac */,
+				306AEBEC3017A851008F414D /* PacketTunnelWireGuardMac */,
 				9A353B6D1F29EC110049A64F /* Frameworks */,
 				025E033E748BC408613F7905 /* Pods */,
 				9A353B521F29EB0E0049A64F /* Products */,
@@ -149,6 +186,7 @@
 			children = (
 				9A353B511F29EB0E0049A64F /* AtomSDKDemo.app */,
 				306AEAF930177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension */,
+				306AEBEA3017A851008F414D /* com.atom.demo.public.macos.packettunnelwireguard.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +224,24 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		306AEBFD3017ACE8008F414D /* AtomWireGuardGoBridgemacOS */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 306AEBFE3017ACE8008F414D /* Build configuration list for PBXLegacyTarget "AtomWireGuardGoBridgemacOS" */;
+			buildPhases = (
+			);
+			buildToolPath = "$(SRCROOT)/build-scripts/build_wireguard_go_bridge.sh";
+			dependencies = (
+			);
+			name = AtomWireGuardGoBridgemacOS;
+			packageProductDependencies = (
+			);
+			passBuildSettingsInEnvironment = 1;
+			productName = AtomWireGuardGoBridgemacOS;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		306AEAF830177DAF008F414D /* PacketTunnelOpenVPNMac */ = {
 			isa = PBXNativeTarget;
@@ -210,6 +266,30 @@
 			productReference = 306AEAF930177DAF008F414D /* com.atom.demo.public.macos.packettunnelopenvpn.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
+		306AEBE93017A851008F414D /* PacketTunnelWireGuardMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 306AEBF73017A851008F414D /* Build configuration list for PBXNativeTarget "PacketTunnelWireGuardMac" */;
+			buildPhases = (
+				306AEBE63017A851008F414D /* Sources */,
+				306AEBE73017A851008F414D /* Frameworks */,
+				306AEBE83017A851008F414D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				306AEC023017ACFA008F414D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				306AEBEC3017A851008F414D /* PacketTunnelWireGuardMac */,
+			);
+			name = PacketTunnelWireGuardMac;
+			packageProductDependencies = (
+				306AEBFB3017ACA6008F414D /* AtomWireguardTunnel */,
+			);
+			productName = PacketTunnelWireGuardMac;
+			productReference = 306AEBEA3017A851008F414D /* com.atom.demo.public.macos.packettunnelwireguard.systemextension */;
+			productType = "com.apple.product-type.system-extension";
+		};
 		9A353B501F29EB0E0049A64F /* AtomSDKDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A353B651F29EB0E0049A64F /* Build configuration list for PBXNativeTarget "AtomSDKDemo" */;
@@ -225,6 +305,7 @@
 			);
 			dependencies = (
 				306AEB0330177DAF008F414D /* PBXTargetDependency */,
+				306AEBF43017A851008F414D /* PBXTargetDependency */,
 			);
 			name = AtomSDKDemo;
 			productName = PureVPNSDKSample;
@@ -242,6 +323,12 @@
 				ORGANIZATIONNAME = PureVPN;
 				TargetAttributes = {
 					306AEAF830177DAF008F414D = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					306AEBE93017A851008F414D = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					306AEBFD3017ACE8008F414D = {
 						CreatedOnToolsVersion = 26.6;
 					};
 					9A353B501F29EB0E0049A64F = {
@@ -270,6 +357,7 @@
 				306AEAB03013C0B7008F414D /* XCRemoteSwiftPackageReference "atomsdkanalytics" */,
 				306AEAB33013C0F9008F414D /* XCRemoteSwiftPackageReference "atomsdkbysecure" */,
 				306AEB0A30178393008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */,
+				306AEBFA3017ACA6008F414D /* XCRemoteSwiftPackageReference "AtomWireguardTunnel" */,
 			);
 			productRefGroup = 9A353B521F29EB0E0049A64F /* Products */;
 			projectDirPath = "";
@@ -277,12 +365,21 @@
 			targets = (
 				9A353B501F29EB0E0049A64F /* AtomSDKDemo */,
 				306AEAF830177DAF008F414D /* PacketTunnelOpenVPNMac */,
+				306AEBE93017A851008F414D /* PacketTunnelWireGuardMac */,
+				306AEBFD3017ACE8008F414D /* AtomWireGuardGoBridgemacOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		306AEAF730177DAF008F414D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		306AEBE83017A851008F414D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -333,6 +430,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		306AEBE63017A851008F414D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A353B4D1F29EB0E0049A64F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,6 +457,16 @@
 			isa = PBXTargetDependency;
 			target = 306AEAF830177DAF008F414D /* PacketTunnelOpenVPNMac */;
 			targetProxy = 306AEB0230177DAF008F414D /* PBXContainerItemProxy */;
+		};
+		306AEBF43017A851008F414D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 306AEBE93017A851008F414D /* PacketTunnelWireGuardMac */;
+			targetProxy = 306AEBF33017A851008F414D /* PBXContainerItemProxy */;
+		};
+		306AEC023017ACFA008F414D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 306AEBFD3017ACE8008F414D /* AtomWireGuardGoBridgemacOS */;
+			targetProxy = 306AEC013017ACFA008F414D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -501,6 +615,206 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		306AEBF83017A851008F414D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = PacketTunnelWireGuardMac/PacketTunnelWireGuardMac.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4H849Z7V2K;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacketTunnelWireGuardMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnelWireGuardMac;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 PureVPN. All rights reserved.";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = SYSTEM_EXTENSION_USAGE_DESCRIPTION;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.public.macos.packettunnelwireguard;
+				PRODUCT_NAME = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "AtomSDK Demo Public macOS App PT WireGuard";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		306AEBF93017A851008F414D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = PacketTunnelWireGuardMac/PacketTunnelWireGuardMac.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4H849Z7V2K;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacketTunnelWireGuardMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnelWireGuardMac;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 PureVPN. All rights reserved.";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = SYSTEM_EXTENSION_USAGE_DESCRIPTION;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atom.demo.public.macos.packettunnelwireguard;
+				PRODUCT_NAME = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "AtomSDK Demo Public macOS App PT WireGuard";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		306AEBFF3017ACE8008F414D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4H849Z7V2K;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		306AEC003017ACE8008F414D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4H849Z7V2K;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -693,6 +1007,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		306AEBF73017A851008F414D /* Build configuration list for PBXNativeTarget "PacketTunnelWireGuardMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				306AEBF83017A851008F414D /* Debug */,
+				306AEBF93017A851008F414D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		306AEBFE3017ACE8008F414D /* Build configuration list for PBXLegacyTarget "AtomWireGuardGoBridgemacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				306AEBFF3017ACE8008F414D /* Debug */,
+				306AEC003017ACE8008F414D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9A353B4C1F29EB0E0049A64F /* Build configuration list for PBXProject "AtomSDKDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -738,6 +1070,14 @@
 				minimumVersion = 4.3.0;
 			};
 		};
+		306AEBFA3017ACA6008F414D /* XCRemoteSwiftPackageReference "AtomWireguardTunnel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AtomSDK/AtomWireguardTunnel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -755,6 +1095,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 306AEB0A30178393008F414D /* XCRemoteSwiftPackageReference "atomsdktunnel" */;
 			productName = AtomSDKTunnel;
+		};
+		306AEBFB3017ACA6008F414D /* AtomWireguardTunnel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 306AEBFA3017ACA6008F414D /* XCRemoteSwiftPackageReference "AtomWireguardTunnel" */;
+			productName = AtomWireguardTunnel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

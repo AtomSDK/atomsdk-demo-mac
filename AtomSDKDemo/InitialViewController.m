@@ -31,7 +31,7 @@
         atomConfiguration.secretKey = self.txtSecretKey.stringValue;
         atomConfiguration.vpnInterfaceName = @"ATOMSDKSAMPLE";
         atomConfiguration.tunnelProviderBundleIdentifier = @"com.atom.demo.public.macos.packettunnelopenvpn";
-        //atomConfiguration.wireGuardTunnelProviderBundleIdentifier = @"com.atom.demo.public.macos.packettunnelwireguard";
+        atomConfiguration.wireGuardTunnelProviderBundleIdentifier = @"com.atom.demo.public.macos.packettunnelwireguard";
         atomConfiguration.appGroupIdentifier = @"group.com.atom.demo.public.macos.app";
         self.shareInstance = [AtomManager sharedInstanceWithAtomConfiguration:atomConfiguration];
         

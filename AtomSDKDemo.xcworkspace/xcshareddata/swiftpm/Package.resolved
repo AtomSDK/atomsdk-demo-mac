@@ -1,5 +1,5 @@
 {
-  "originHash" : "86ebc90664a6dd71d38d27c7c07c00dce0942e93cde3bd60cca9fed351171db1",
+  "originHash" : "7a6c0d2b2c740a86ec9b77fded6333ca6fa5d6ed74ae703a20712d9cce1708c8",
   "pins" : [
     {
       "identity" : "atomcore",
@@ -38,12 +38,30 @@
       }
     },
     {
+      "identity" : "atomwireguardtunnel",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AtomSDK/AtomWireguardTunnel",
+      "state" : {
+        "revision" : "8c1755f9756f85e122ce0daee779b33d8421333e",
+        "version" : "2.3.0"
+      }
+    },
+    {
       "identity" : "mixpanel-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mixpanel/mixpanel-swift.git",
       "state" : {
         "revision" : "5f3020832a9594d98c129bf010a2bcc9dc4fa959",
         "version" : "5.2.0"
+      }
+    },
+    {
+      "identity" : "wireguard-apple",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AtomSDK/wireguard-apple",
+      "state" : {
+        "revision" : "106698090f9d1edee8d4f3f3689d18539fcdbf15",
+        "version" : "3.2.0"
       }
     }
   ],

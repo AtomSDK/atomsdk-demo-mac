@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  PacketTunnelOpenVPNMac
+//  PacketTunnelWireGuardMac
 //
 //  Copyright © AtomSDKBySecure 2026 Atom. All rights reserved.
 //
