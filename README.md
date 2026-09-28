@@ -11,7 +11,7 @@ This is a demo application for macOS Applications with basic usage of ATOM VPN S
   - [Integrate AtomSDKBySecure](#integrate-atomsdkbysecure)
   - [Integrate AtomSDKAnalytics](#integrate-atomsdkanalytics)
   - [Integrate AtomSDKTunnel for OpenVPN (TCP &amp; UDP) Protocols](#integrate-atomsdktunnel-for-openvpn-tcp--udp-protocols)
-  - [Integrate AtomWireguardTunnel for Wireguard Protocol](#integrate-atomwireguardtunnel-for-wireguard-protocol)
+  - [Integrate AtomWireguardTunnel for WireGuard Protocol](#integrate-atomwireguardtunnel-for-wireguard-protocol)
 - [Getting Started with the Code](#getting-started-with-the-code)
 - [Enable Local Inventory Support](#enable-local-inventory-support)
 - [Delegates to Register](#delegates-to-register)
@@ -47,7 +47,7 @@ This is a demo application for macOS Applications with basic usage of ATOM VPN S
 
 ### Integration Steps
 1. Download the project.
-2. Change bundle id or enable Automatic Manage Signing in all the targets.
+2. Change bundle id or enable Automatically manage signing in all the targets.
 3. Replace `ENTER_YOUR_ATOM_SDK_SECRET_KEY_HERE` with your secret key in AppDelegate.m.
 4. Replace `com.atom.demo.public.macos.packettunnelopenvpn`, `com.atom.demo.public.macos.packettunnelwireguard`, and `4H849Z7V2K.com.atom.demo.public.macos.group` in AppDelegate.m if you have your own bundle id and group id.
 
@@ -69,7 +69,7 @@ This is a demo application for macOS Applications with basic usage of ATOM VPN S
 * IKEv2
 * TCP
 * UDP
-* Wireguard
+* WireGuard
 
 
 ## SDK Installation
@@ -203,7 +203,7 @@ Then run:
 pod install
 ```
 
-### Integrate AtomWireguardTunnel for Wireguard Protocol
+### Integrate AtomWireguardTunnel for WireGuard Protocol
 
 #### Installation
 
@@ -226,11 +226,11 @@ To add the SDK in Xcode:
 1. Open your Xcode project.
 2. Add your developer account to Xcode from Preferences -> Account if you didn't add before.
 3. Select General tab from your app target and then set your developer account details.
-4. From your app target select Capabilities tab and select the switch right of the Personal VPN. Then select the capabilties you are going to use.
-5. Drag and drop AtomSDK.framework into your project. (Skip if using Cocoapods)
-6. Go to your project -> General tab from your app target, add the framework using ‘+’ to the Embedded Binaries section. (Skip if using Cocoapods)
-8. After the setup is completed, you should be able to use all the classes from the SDK by including it with the #import <AtomSDK/AtomSDK.h> directive.
-9. ATOM SDK needs to be initialized with a “SecretKey” provided to you after you buy the subscription which is typically a hex-numeric literal.
+4. From your app target select Capabilities tab and select the switch right of the Personal VPN. Then select the capabilities you are going to use.
+5. Drag and drop AtomSDK.framework into your project. (Skip if using CocoaPods)
+6. Go to your project -> General tab from your app target, add the framework using ‘+’ to the Embedded Binaries section. (Skip if using CocoaPods)
+7. After the setup is completed, you should be able to use all the classes from the SDK by including it with the #import <AtomSDK/AtomSDK.h> directive.
+8. ATOM SDK needs to be initialized with a “SecretKey” provided to you after you buy the subscription which is typically a hex-numeric literal.
 
 It can be initialized using an instance of AtomConfiguration. It should have a vpnInterfaceName which will be used to create the Network Interface for VPN connection. 
 
@@ -238,7 +238,7 @@ It can be initialized using an instance of AtomConfiguration. It should have a v
     AtomConfiguration *atomConfiguration= [[AtomConfiguration alloc] init];
     atomConfiguration.secretKey = @"SECRETKEY_GOES_HERE";
     atomConfiguration.vpnInterfaceName = @"Atom";
-    atomConfiguration.tunnelProviderBundleIdentifier = @"ENTER_YOUR _NETWORK_EXTENSION_BUNDLE_ID";
+    atomConfiguration.tunnelProviderBundleIdentifier = @"ENTER_YOUR_NETWORK_EXTENSION_BUNDLE_ID";
     atomConfiguration.wireGuardTunnelProviderBundleIdentifier = @"ENTER_YOUR_WIREGUARD_NETWORK_EXTENSION_BUNDLE_ID";
     [AtomManager sharedInstanceWithAtomConfiguration:atomConfiguration];
 ```
@@ -254,7 +254,7 @@ ATOM SDK offers a feature to enable the local inventory support. This can help A
 * Paste the file in root of your application folder.
 
 ## Delegates to Register
-ATOM SDK offers four delegates to register for the ease of the developer.
+ATOM SDK offers a few delegates to register for the ease of the developer.
 * atomManagerDidConnect:
 * atomManagerDidDisconnect:
 * atomManagerOnRedialing:
@@ -270,8 +270,7 @@ ATOM SDK offers stateDidChangedHandler for the ease of the developer.
 
 
 ## VPN Authentication
-ATOM SDK provided two ways to authenticate your vpn user.
-First one is to offer VPN Credentials directly to the SDK which you may create through the Admin Panel provided by ATOM.
+ATOM SDK provides one way to authenticate your VPN user: by passing VPN credentials directly to the SDK. You can create these credentials through the Admin Panel provided by ATOM.
 
 ```ruby
 [AtomManager sharedInstance].atomCredential = [[AtomCredential alloc] initWithUsername:@"<username>" password:@"<password>"];
@@ -287,7 +286,7 @@ AtomProperties* properties = [[AtomProperties alloc] initWithCountry:@"<country>
 Countries can be obtained through ATOM SDK as well.
 ```ruby
 [[AtomManager sharedInstance] getCountriesWithSuccess:^(NSArray<AtomCountry *> *success) {}
-} errorBlock:^(NSError *error) {}];
+errorBlock:^(NSError *error) {}];
 ```
 
 ## Fetch Recommended Country
@@ -299,10 +298,10 @@ You can get the Recommended Country for user's location through ATOM SDK.
 ```
 
 ## Fetch Countries For Smart Dialing
-You can get the Countries those support Smart Dialing through ATOM SDK.
+You can get the Countries that support Smart Dialing through ATOM SDK.
 ```ruby
 [[AtomManager sharedInstance] getCountriesForSmartDialing:^(NSArray<AtomCountry *> *success) {}
-} errorBlock:^(NSError *error) {}];
+errorBlock:^(NSError *error) {}];
 ```
 
 ## Fetch Protocols
@@ -314,15 +313,15 @@ errorBlock:^(NSError *error) {}];
 ```
 
 ## VPN Connection Speed
-For VPN connection speed you need to registor onPacketsTransmitted handler from AtomManager class to get the VPN connection speed in bytes per second. This callback is recieve only in VPN connected state.
+For VPN connection speed you need to register onPacketsTransmitted handler from AtomManager class to get the VPN connection speed in bytes per second. This callback is received only in VPN connected state.
 ```ruby
 AtomManager.sharedInstance.onPacketsTransmitted = ^(NSNumber *bytesReceived, NSNumber *bytesSent) {
-    NSLog(@"bytesIN: %ld | bytesOUT: %ld ",(long)bytesReceived.integerValue,bytesSent.integerValue);
+    NSLog(@"bytesIN: %ld | bytesOUT: %ld ", (long)bytesReceived.integerValue, (long)bytesSent.integerValue);
 };
 ```
 
 ## Protocol switch
-You can enable or disable protocol switch from VPNProperties class. By default its value is set to true.
+You can enable or disable protocol switch from AtomProperties class. By default its value is set to true.
 ```ruby
 properties.enableProtocolSwitch = false;
 ```
@@ -332,10 +331,10 @@ properties.enableProtocolSwitch = true;
 ```
 
 ## Recommended protocol
-If you didn't specify the protocol in case of Country, City and Channel dailing then Atom SDK dialed with recommended protocol according to the specified country, city and channel. It will not work for dedicated IP.
+If you didn't specify the protocol in case of Country, City and Channel dialing then Atom SDK dials with recommended protocol according to the specified country, city and channel. It will not work for dedicated IP.
 
 ## Use Failover
-Failover is a mechanism in which Atom dialed with nearest server if requested server is busy or not found for any reason. You can control this mechanism from VPNPorperties class. By default its value is set to true.
+Failover is a mechanism in which Atom dials the nearest server if requested server is busy or not found for any reason. You can control this mechanism from AtomProperties class. By default its value is set to true.
 ```ruby
 properties.useFailover = false;
 ```
@@ -363,7 +362,7 @@ When connecting with parameters, a server can be included or excluded with its N
 ```ruby
 AtomProperties* properties = [[AtomProperties alloc] initWithCountry:@"<#country#>" protocol:@"<#protocol#>"];
 NSMutableArray<ServerFilter *> *serverFilters = [NSMutableArray new];
-[serverFilters addObject:[[ServerFilter alloc] initWithNasIdentifier:@"nas-identifier-here"" andFilter:INCLUDE]];
+[serverFilters addObject:[[ServerFilter alloc] initWithNasIdentifier:@"nas-identifier-here" andFilter:INCLUDE]];
 [serverFilters addObject:[[ServerFilter alloc] initWithNasIdentifier:@"nas-identifier-here" andFilter:EXCLUDE]];
 [properties setServerFilters:serverFilters];
 [[AtomManager sharedInstance] connectWithProperties:properties completion:^(NSString *success) {}
@@ -380,19 +379,19 @@ errorBlock:^(NSError *error) {}];
 ```
 
 ### Connection with Real-time Optimized Servers
-This one is same as the first one i.e. “Connection with Parameters” with a slight addition of using Real-time optimized servers best from your user’s location. You just need to set this property to TRUE and rest will be handled by the ATOM SDK.
+This one is the same as the first one i.e. “Connection with Parameters” with a slight addition of using Real-time optimized servers best from your user’s location. You just need to set this property to TRUE and rest will be handled by the ATOM SDK.
 ```ruby
 AtomProperties* properties = [[AtomProperties alloc] initWithCountry:@"<#country#>" protocol:@"<#protocol#>"];
 [properties setUseOptimization:YES];
 
-[[AtomManager sharedInstance] connectWithPropertiesconnectWithProperties:properties completion:^(NSString *success) {}
+[[AtomManager sharedInstance] connectWithProperties:properties completion:^(NSString *success) {}
 errorBlock:^(NSError *error) {}];
 ```
 
-If you want to show your user the best location for him on your GUI then ATOM SDK have it ready for you as well! ATOM SDK has a method exposed namely “getOptimizedCountries” which adds a property “RoundTripTime” in the country object which has the real-time latency of all countries from your user’s location (only if ping is enabled on your user’s system and ISP doesn’t blocks any of our datacenters). You can use this property to find the best speed countries from your user’s location.
+If you want to show your user the best location for them on your GUI then ATOM SDK has it ready for you as well! ATOM SDK has a method exposed namely “getOptimizedCountries” which adds a property “RoundTripTime” in the country object which has the real-time latency of all countries from your user’s location (only if ping is enabled on your user’s system and ISP doesn’t block any of our datacenters). You can use this property to find the best speed countries from your user’s location.
 
 ### Connection with Smart Dialing
-“Connection with Parameters” with a slight addition of using smart dialing to connect. You just need to call "withSmartDialing" and rest will handled by the ATOM SDK.
+“Connection with Parameters” with a slight addition of using smart dialing to connect. You just need to call "withSmartDialing" and the rest will be handled by the ATOM SDK.
 ```ruby
 AtomProperties* properties = [[AtomProperties alloc] initWithCountry:@"<#country#>" protocol:@"<#protocol#>"];
 [properties setUseSmartDialing:YES];
@@ -588,7 +587,7 @@ This section provides details about the VPN Pause and Resume feature in the Atom
 
 ### Feature Overview
 The VPN Pause feature allows pausing a VPN connection under specific conditions and includes one mode:
-- **Timed Pause:** Pauses the VPN connection for a preset duration, after which it automatically resumes. Users can’t resume the connection manually before the timer completes.
+- **Timed Pause:** Pauses the VPN connection for a preset duration, after which it automatically resumes. Users can resume the connection manually before the timer completes.
 
 #### Key Rules and Conditions:
 1. VPN can be paused only when it is in Connected state.
@@ -833,12 +832,12 @@ The following properties are available in the connection details related to this
 
 We are going to integrate AtomSDKTunnel in macOS application for dialing with TCP/UDP protocol. 
 
-There are few steps that needs to followed carefully. 
+There are a few steps that need to be followed carefully. 
 
-Lets start setting up system extension. 
+Let's start setting up system extension. 
 
 ## Requirement
-#### Operation System 
+#### Operating System 
 macOS 10.15
 
 #### Capabilities
@@ -849,8 +848,7 @@ App Groups
 
 
 ## Step # 1
-## 
-We need to add a new target. Press plus sign on bottom left of xcode where all the targets are listed. 
+We need to add a new target. Press plus sign on bottom left of Xcode where all the targets are listed. 
 
 ![1.png](./_resources/b55621ea6b6449d580f18b67a824df9b.png)
 
@@ -872,7 +870,7 @@ Congrats, new target has been created. But we need to configure it.
 
 ![4.png](./_resources/86f092f5cf0f4ddea4c5d2255f5dbd17.png)
 
-Go to capabilities tab on top of xcode and under Network Extension Capabilities please choose Packet Tunnel and enable Out going connection 
+Go to capabilities tab on top of Xcode and under Network Extension Capabilities please choose Packet Tunnel and enable Outgoing connection 
 
 
 ![5.png](./_resources/529b7fbe683b4d8bb1b8a978c1b9784b.png)
@@ -884,20 +882,20 @@ In your macOS application target add system extension capability.
 
 
 ## Step # 2
-Now let add the framework in dependency manager (Cocoapods) using the following command. 
+Now let's add the framework in dependency manager (CocoaPods) using the following command. 
 
-**Note:** This framework must be added to Network extension target since this target will only be running in 10.15 macOS.
+**Note:** This framework must be added to Network extension target since this target will only be running on macOS 10.15.
 
 ![7.png](./_resources/06e87fb1e97e4a948442bece4cec3d76.png)
 
 
-Let install Pod using, 
+Let's install the pod using, 
 
 **pod install --verbose**
 
 ## Step # 3
 
-Since there is a limitation on cocoapod to embed framework in System extension, we will be adding it manually. 
+Since there is a limitation on CocoaPods to embed framework in System extension, we will be adding it manually. 
 
 Press Plus sign under **Framework and Libraries**
 
@@ -905,21 +903,21 @@ Press Plus sign under **Framework and Libraries**
 
 ![8.png](./_resources/ae91f4f992154d3bb4bb6bb598e5629f.png)
 
-and select AtomOPVPNTunnel.xcframework, AtomSDKTunnel.xcframework, LZ4.xcframework, mbedTLS.xcframework, OpenVPNClient.xcframework for OpenVPN specific System Extension
+and select AtomOVPNTunnel.xcframework, AtomSDKTunnel.xcframework, LZ4.xcframework, mbedTLS.xcframework, OpenVPNClient.xcframework for OpenVPN specific System Extension
 
 
 ![9.png](./_resources/779d8879516d4080b7bbf4870db2c169.2.png)
 
 
-and select AtomWireguardTunnel for Wireguard specific System Extension
+and select AtomWireguardTunnel for WireGuard specific System Extension
 
 
 ![9.1.png](./_resources/779d8879516d4080b7bbf4870db2c169.1.png)
 
 
-## Steps # 4
+## Step # 4
 
-Here comes to the coding part. Simple pass the tunnel bundle identifier and app group identifier of new created target to AtomConfiguration class. 
+Here comes the coding part. Simply pass the tunnel bundle identifier and app group identifier of the newly created target to AtomConfiguration class. 
 
 
 ![10.png](./_resources/671c1c664f6a4a239536a52bc02b40b6.png)
@@ -927,7 +925,7 @@ Here comes to the coding part. Simple pass the tunnel bundle identifier and app 
 Note: You can enable/disable OpenVPN connection logs using the bit enableVPNLogs. 
 
 
-In order to activate System Extension you need to call ExtensionManager's activeExtension method. **Note:**  **This should be done after AtomSDK being initialized.**
+In order to activate System Extension you need to call ExtensionManager's activateWithSystemExtensionName method. **Note:**  **This should be done after AtomSDK has been initialized.**
 
 
 
@@ -958,7 +956,7 @@ In your Extension's info.plist, change the value of NEMachServiceName to be the 
 ![16.png](./_resources/d435979919c54e7d8a04017b95ebbd10.png)
 
 
-Wolaa, Integartion is completed. Time to test it. 
+Voilà, Integration is completed. Time to test it. 
 
 If you run your app system extension will ask for user's approval. 
 
@@ -984,7 +982,7 @@ Once the system Extension is installed you can verify it using the following com
 
 ## Releasing App
 
-In order to release the system extension there are few requirement. 
+In order to release the system extension there are a few requirements. 
 
 Entitlement file of Extension manager in release must have the following key value pair. 
 
