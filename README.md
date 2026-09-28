@@ -956,15 +956,15 @@ In your Extension's info.plist, change the value of NEMachServiceName to be the 
 ![16.png](./_resources/d435979919c54e7d8a04017b95ebbd10.png)
 
 
-Voilà, Integration is completed. Time to test it. 
+Voilà, integration is complete. Time to test it. 
 
-If you run your app system extension will ask for user's approval. 
+If you run your app, the system extension will ask for the user's approval.
 
 
 ![17.png](./_resources/0ca42163fad74914b8ef3074323b0b46.png)
 
 
-Which can be allowed from Security Preferences. 
+You can allow it from System Settings → Privacy & Security.
 
 
 
